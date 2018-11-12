@@ -14,23 +14,25 @@
 == Overview
 
 iScheduler Xs Max is a desktop scheduler application morphed from the original
-https://github.com/nus-cs2103-AY1819S1/addressbook-level4[Address Book sample application (Level 4)]. As its name suggests, it is used
-for scheduling events. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has
-about 10 kLoC.
+https://github.com/nus-cs2103-AY1819S1/addressbook-level4[Address Book sample application (Level 4)]. As its name
+suggests, it is used for scheduling events. The user interacts with it using a CLI, and it has a GUI created with
+JavaFX. It is written in Java, and has about 175 kLoC (Java code comprises 21 kLoC of it).
 
 == Summary of contributions
 
 * *Major enhancement*: added *the ability to have auto-completion of commands*
 ** What it does: allows the user to have the ability to invoke a particular commands by suggested auto-completion(s).
-** Justification: This feature improves the product significantly because some command names can be a little long and having
-auto-completion of the command name should provide a convenient way to invoke the command.
-** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design
-alternatives. The implementation too was challenging as it required the knowledge of a method named `TextFields.bindAutoCompletion()`
-from an external library called https://bitbucket.org/controlsfx/controlsfx/[ControlsFX]. See
+** Justification: This feature improves the product significantly because some command names can be a little long and
+having auto-completion of the command name should provide a convenient way to invoke the command.
+** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth
+analysis of design alternatives. The implementation too was challenging as it required the knowledge of a method named
+`TextFields.bindAutoCompletion()` from an external library called
+https://bitbucket.org/controlsfx/controlsfx/[ControlsFX]. See
 link:{repoURL}/src/main/java/seedu/scheduler/ui/CommandBox.java#CommandBox()[`FindCommand#COMMAND_WORD`].
 ** Credits: _Goh Cheng Yu (GitHub: link:https://github.com/chengyuuu[@Chengyuuu]) and Tan Ying Zi Rebecca
-(GitHub: link:https://github.com/rebstan97[@rebstan97]) for contributing their ideas as well as teaching me how to one of the ways to
-use auto-completion in Java._
+(GitHub: link:https://github.com/rebstan97[@rebstan97]) for contributing their ideas as well as teaching me how to one
+of the ways of how to use auto-completion in Java._
+* *Minor enhancement*: added *command aliases* that allows the user to use aliases to invoke commands.
 
 * *Code contributed*: My link:https://github.com/reposense/RepoSense[RepoSense]
 https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&search=HEARTOFAL1ON[Project Code Dashboard]
@@ -41,40 +43,42 @@ https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&search=HEARTO
 *** Opened a link:https://github.com/nus-cs2103-AY1819S1/addressbook-level4/pull/43[PR] on behalf of my team,
 link:https://github.com/CS2103-AY1819S1-F11-1/[F11-1], to
 link:https://github.com/nus-cs2103-AY1819S1/addressbook-level4[Address Book sample application (Level 4)]
-*** Fixed broken images not showing on our team's GitHub pages link:https://cs2103-ay1819s1-f11-1.github.io/main/[link] for iScheduler
-Xs Max (Pull request {repoPR}/86[#86])
-*** Configured link:https://github.com/reposense/RepoSense[RepoSense] `_reposense/config.json` file template on behalf of my
-link:https://github.com/CS2103-AY1819S1-F11-1/[team] (Pull request {repoPR}/100[#100])
+*** Fixed broken images not showing on our team's GitHub pages link:https://cs2103-ay1819s1-f11-1.github.io/main/[link]
+for iScheduler Xs Max (Pull request {repoPR}/86[#86])
+*** Configured link:https://github.com/reposense/RepoSense[RepoSense] `_reposense/config.json` file template on behalf
+of my link:https://github.com/CS2103-AY1819S1-F11-1/[team] (Pull request {repoPR}/100[#100])
 *** Updated issue templates for my team's link:https://github.com/CS2103-AY1819S1-F11-1/main[repository] (Pull request
 {repoPR}/110[#110])
 *** Managed releases `v1.3.5` (1 release) on GitHub
 ** Enhancements to existing features:
 *** Wrote additional tests for existing features to increase coverage (Pull request {repoPR}/66[#66])
-*** Acted promptly on TA's feedback for our team's link:https://github.com/nus-cs2103-AY1819S1/addressbook-level4/pull/43[PR] to
+*** Acted promptly on TA's feedback for our team's
+link:https://github.com/nus-cs2103-AY1819S1/addressbook-level4/pull/43[PR] to
 link:https://github.com/nus-cs2103-AY1819S1/addressbook-level4[Address Book sample application (Level 4)] (Pull request
 {repoPR}/82[#82])
 ** Documentation:
-*** Did cosmetic tweaks and corrected grammatical and other mistakes to existing contents of the User Guide ({repoPR}/116[#116]), the
-README ({repoPR}/146[#146]) and the Developer Guide ({repoPR}/123[#123], {repoPR}/147[#147])
+*** Did cosmetic tweaks and corrected grammatical and other mistakes to existing contents of the User Guide
+({repoPR}/116[#116]), the README ({repoPR}/146[#146]) and the Developer Guide ({repoPR}/123[#123], {repoPR}/147[#147])
 ** Community:
-*** PRs reviewed (some with non-trivial comments): {repoPR}/44[#44], {repoPR}/48[#48], {repoPR}/50[#50], {repoPR}/51[#51],
-{repoPR}/56[#56], {repoPR}/57[#57], {repoPR}/58[#58], {repoPR}/65[#65], {repoPR}/68[#68], {repoPR}/70[#70], {repoPR}/75[#75],
-{repoPR}/94[#94], {repoPR}/95[#95], {repoPR}/117[#117], {repoPR}/123[#123], {repoPR}/124[#124], {repoPR}/132[#132],
-{repoPR}/143[#143], {repoPR}/233[#233]
-*** Reported bugs and suggestions for other teams in the class (examples: {F10-2}/issues/233[#233], {F10-2}/issues/235[#235],
-{F10-2}/issues/237[#237], {F10-2}/issues/238[#238])
-*** Contributed to forum discussions (examples: {issuesForum}/5[5], {issuesForum}/7[7], {issuesForum}/11[11], {issuesForum}/19[19],
-{issuesForum}/20[20], {issuesForum}/35[35], {issuesForum}/38[38], {issuesForum}/39[39], {issuesForum}/45[45], {issuesForum}/60[60],
-{issuesForum}/66[66], {issuesForum}/74[74], {issuesForum}/78[78], {issuesForum}/79[79], {issuesForum}/82[82], {issuesForum}/83[83],
-{issuesForum}/86[86], {issuesForum}/88[88], {issuesForum}/107[107], {issuesForum}/109[109], {issuesForum}/122[122],
-{issuesForum}/123[123], {issuesForum}/124[124], {issuesForum}/126[126], {issuesForum}/138[138], {issuesForum}/146[146],
-{issuesForum}/147[147], {issuesForum}/157[157], {issuesForum}/158[158])
+*** PRs reviewed (some with non-trivial comments): {repoPR}/44[#44], {repoPR}/48[#48], {repoPR}/50[#50],
+{repoPR}/51[#51], {repoPR}/56[#56], {repoPR}/57[#57], {repoPR}/58[#58], {repoPR}/65[#65], {repoPR}/68[#68],
+{repoPR}/70[#70], {repoPR}/75[#75], {repoPR}/94[#94], {repoPR}/95[#95], {repoPR}/117[#117], {repoPR}/123[#123],
+{repoPR}/124[#124], {repoPR}/132[#132], {repoPR}/143[#143], {repoPR}/233[#233]
+*** Reported bugs and suggestions for other teams in the class (examples: {F10-2}/issues/233[#233],
+{F10-2}/issues/235[#235], {F10-2}/issues/237[#237], {F10-2}/issues/238[#238])
+*** Contributed to forum discussions (examples: {issuesForum}/5[5], {issuesForum}/7[7], {issuesForum}/11[11],
+{issuesForum}/19[19], {issuesForum}/20[20], {issuesForum}/35[35], {issuesForum}/38[38], {issuesForum}/39[39],
+{issuesForum}/45[45], {issuesForum}/60[60], {issuesForum}/66[66], {issuesForum}/74[74], {issuesForum}/78[78],
+{issuesForum}/79[79], {issuesForum}/82[82], {issuesForum}/83[83], {issuesForum}/86[86], {issuesForum}/88[88],
+{issuesForum}/107[107], {issuesForum}/109[109], {issuesForum}/122[122], {issuesForum}/123[123], {issuesForum}/124[124],
+{issuesForum}/126[126], {issuesForum}/138[138], {issuesForum}/146[146], {issuesForum}/147[147], {issuesForum}/157[157],
+{issuesForum}/158[158])
 ** Tools:
 *** Integrated a third party library (ControlsFX) to the project (Pull request {repoPR}/156[#156])
 *** Helped to enable link:https://travis-ci.org/[Travis CI] notifications for our team's private
 link:https://slack.com/[Slack] channel (Pull request {repoPR}/92[#92])
-*** Helped to enable notifications from our GitHub link:https://github.com/CS2103-AY1819S1-F11-1/main[repository] to the aforementioned
-Slack channel by subscribing to our team's link:https://github.com/CS2103-AY1819S1-F11-1/main[repository]
+*** Helped to enable notifications from our GitHub link:https://github.com/CS2103-AY1819S1-F11-1/main[repository] to the
+aforementioned Slack channel by subscribing to our team's link:https://github.com/CS2103-AY1819S1-F11-1/main[repository]
 
 _{you can add/remove categories in the list above}_
 
@@ -82,26 +86,25 @@ _{you can add/remove categories in the list above}_
 
 
 |===
-|_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
+|_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting
+end-users._
 |===
 
-include::../UserGuide.adoc[tag=undoredo]
+include::../UserGuide.adoc[tag=addTag]
 
-include::../UserGuide.adoc[tag=dataencryption]
+include::../UserGuide.adoc[tag=autoCompletion]
+
+include::../UserGuide.adoc[tag=commandAliasing]
+
+include::../UserGuide.adoc[tag=caseSensitive]
 
 == Contributions to the Developer Guide
 
 |===
-|_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
+|_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical
+documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
+include::../DeveloperGuide.adoc[tag=autoCompletion]
 
-include::../DeveloperGuide.adoc[tag=dataencryption]
-
-
-== PROJECT: PowerPointLabs
-
----
-
-_{Optionally, you may include other projects in your portfolio.}_
+include::../DeveloperGuide.adoc[tag=commandAliasing]

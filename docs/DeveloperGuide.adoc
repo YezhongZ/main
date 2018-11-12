@@ -24,7 +24,8 @@ By: `CS2103-AY1819S1-F11-1`      Since: `Sep 2018`      Licence: `MIT`
 . *JDK `9`* or later
 +
 [WARNING]
-JDK `10` on Windows will fail to run tests in <<UsingGradle#Running-Tests, headless mode>> due to a https://github.com/javafxports/openjdk-jfx/issues/66[JavaFX bug].
+JDK `10` on Windows will fail to run tests in <<UsingGradle#Running-Tests, headless mode>> due to a
+https://github.com/javafxports/openjdk-jfx/issues/66[JavaFX bug].
 Windows developers are highly recommended to use JDK `9`.
 
 . *IntelliJ* IDE
@@ -37,7 +38,8 @@ Do not disable them. If you have disabled them, go to `File` > `Settings` > `Plu
 === Setting up the project in your computer
 
 . Fork this repo, and clone the fork to your computer
-. Open IntelliJ (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project dialog first)
+. Open IntelliJ (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project
+dialog first)
 . Set up the correct JDK version for Gradle
 .. Click `Configure` > `Project Defaults` > `Project Structure`
 .. Click `New...` and find the directory of the JDK
@@ -45,12 +47,19 @@ Do not disable them. If you have disabled them, go to `File` > `Settings` > `Plu
 . Locate the `build.gradle` file and select it. Click `OK`
 . Click `Open as Project`
 . Click `OK` to accept the default settings
-. Open a console and run the command `gradlew processResources` (Mac/Linux: `./gradlew processResources`). It should finish with the `BUILD SUCCESSFUL` message. +
+. Open a console and run the command `gradlew processResources` (Mac/Linux: `./gradlew processResources`). It should
+finish with the `BUILD SUCCESSFUL` message. +
 This will generate all resources required by the application and tests.
-. Open link:{repoURL}/src/main/java/seedu/scheduler/storage/XmlAdaptedEvent.java[`XmlAdaptedEvent.java`] and link:{repoURL}/src/main/java/seedu/scheduler/ui/MainWindow.java[`MainWindow.java`] and check for any code errors
-.. Due to an ongoing https://youtrack.jetbrains.com/issue/IDEA-189060[issue] with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully
-.. To resolve this, place your cursor over any of the code section highlighted in red. Press kbd:[ALT + ENTER], and select `Add '--add-modules=...' to module compiler options` for each error
-. Repeat this for the test folder as well (e.g. check link:{repoURL}/src/test/java/seedu/scheduler/commons/util/XmlUtilTest.java[`XmlUtilTest.java`] and link:{repoURL}/src/test/java/seedu/scheduler/ui/HelpWindowTest.java[`HelpWindowTest.java`] for code errors, and if so, resolve it the same way)
+. Open link:{repoURL}/src/main/java/seedu/scheduler/storage/XmlAdaptedEvent.java[`XmlAdaptedEvent.java`] and
+link:{repoURL}/src/main/java/seedu/scheduler/ui/MainWindow.java[`MainWindow.java`] and check for any code errors
+.. Due to an ongoing https://youtrack.jetbrains.com/issue/IDEA-189060[issue] with some of the newer versions of
+IntelliJ, code errors may be detected even if the project can be built and run successfully
+.. To resolve this, place your cursor over any of the code section highlighted in red. Press kbd:[ALT + ENTER],
+and select `Add '--add-modules=...' to module compiler options` for each error
+. Repeat this for the test folder as well (e.g. check
+link:{repoURL}/src/test/java/seedu/scheduler/commons/util/XmlUtilTest.java[`XmlUtilTest.java`] and
+link:{repoURL}/src/test/java/seedu/scheduler/ui/HelpWindowTest.java[`HelpWindowTest.java`] for code errors, and if so,
+resolve it the same way)
 
 === Verifying the setup
 
@@ -61,40 +70,53 @@ This will generate all resources required by the application and tests.
 
 ==== Configuring the coding style
 
-This project follows https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc[oss-generic coding standards]. IntelliJ's default style is mostly compliant with ours but it uses a different import order from ours. To rectify,
+This project follows https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc[oss-generic coding
+standards]. IntelliJ's default style is mostly compliant with ours but it uses a different import order from ours. To
+rectify,
 
 . Go to `File` > `Settings...` (Windows/Linux), or `IntelliJ IDEA` > `Preferences...` (macOS)
 . Select `Editor` > `Code Style` > `Java`
 . Click on the `Imports` tab to set the order
 
-* For `Class count to use import with '\*'` and `Names count to use static import with '*'`: Set to `999` to prevent IntelliJ from contracting the import statements
-* For `Import Layout`: The order is `import static all other imports`, `import java.\*`, `import javax.*`, `import org.\*`, `import com.*`, `import all other imports`. Add a `<blank line>` between each `import`
+* For `Class count to use import with '\*'` and `Names count to use static import with '*'`: Set to `999` to prevent
+IntelliJ from contracting the import statements
+* For `Import Layout`: The order is `import static all other imports`, `import java.\*`, `import javax.*`,
+`import org.\*`, `import com.*`, `import all other imports`. Add a `<blank line>` between each `import`
 
-Optionally, you can follow the <<UsingCheckstyle#, UsingCheckstyle.adoc>> document to configure Intellij to check style-compliance as you write code.
+Optionally, you can follow the <<UsingCheckstyle#, UsingCheckstyle.adoc>> document to configure Intellij to check
+style-compliance as you write code.
 
 ==== Updating documentation to match your fork
 
-After forking the repo, the documentation will still have the SE-EDU branding and refer to the `CS2103-AY1819S1-F11-1/main` repo.
+After forking the repo, the documentation will still have the SE-EDU branding and refer to the
+`CS2103-AY1819S1-F11-1/main` repo.
 
-If you plan to develop this fork as a separate product (i.e. instead of contributing to `CS2103-AY1819S1-F11-1/main`), you should do the following:
+If you plan to develop this fork as a separate product (i.e. instead of contributing to `CS2103-AY1819S1-F11-1/main`),
+you should do the following:
 
-. Configure the <<Docs-SiteWideDocSettings, site-wide documentation settings>> in link:{repoURL}/build.gradle[`build.gradle`], such as the `site-name`, to suit your own project.
+. Configure the <<Docs-SiteWideDocSettings, site-wide documentation settings>> in
+link:{repoURL}/build.gradle[`build.gradle`], such as the `site-name`, to suit your own project.
 
-. Replace the URL in the attribute `repoURL` in link:{repoURL}/docs/DeveloperGuide.adoc[`DeveloperGuide.adoc`] and link:{repoURL}/docs/UserGuide.adoc[`UserGuide.adoc`] with the URL of your fork.
+. Replace the URL in the attribute `repoURL` in link:{repoURL}/docs/DeveloperGuide.adoc[`DeveloperGuide.adoc`] and
+link:{repoURL}/docs/UserGuide.adoc[`UserGuide.adoc`] with the URL of your fork.
 
 ==== Setting up CI
 
-Set up Travis to perform Continuous Integration (CI) for your fork. See <<UsingTravis#, UsingTravis.adoc>> to learn how to set it up.
+Set up Travis to perform Continuous Integration (CI) for your fork. See <<UsingTravis#, UsingTravis.adoc>> to learn how
+to set it up.
 
-After setting up Travis, you can optionally set up coverage reporting for your team fork (see <<UsingCoveralls#, UsingCoveralls.adoc>>).
+After setting up Travis, you can optionally set up coverage reporting for your team fork (see <<UsingCoveralls#,
+UsingCoveralls.adoc>>).
 
 [NOTE]
-Coverage reporting could be useful for a team repository that hosts the final version but it is not that useful for your personal fork.
+Coverage reporting could be useful for a team repository that hosts the final version but it is not that useful for your
+personal fork.
 
 Optionally, you can set up AppVeyor as a second CI (see <<UsingAppVeyor#, UsingAppVeyor.adoc>>).
 
 [NOTE]
-Having both Travis and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms (Travis is Unix-based and AppVeyor is Windows-based)
+Having both Travis and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms (Travis
+is Unix-based and AppVeyor is Windows-based)
 
 ==== Getting started with coding
 
@@ -134,19 +156,25 @@ When deployed to user, please change to an expected time for user to see the wel
 .Architecture Diagram
 image::Architecture.png[width="600"]
 
-The *_Architecture Diagram_* given above explains the high-level design of the App. Given below is a quick overview of each component.
+The *_Architecture Diagram_* given above explains the high-level design of the App. Given below is a quick overview of
+each component.
 
 [TIP]
-The `.pptx` files used to create diagrams in this document can be found in the link:{repoURL}/docs/diagrams/[diagrams] folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose `Save as picture`.
+The `.pptx` files used to create diagrams in this document can be found in the link:{repoURL}/docs/diagrams/[diagrams]
+folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose
+`Save as picture`.
 
-`Main` has only one class called link:{repoURL}/src/main/java/seedu/scheduler/MainApp.java[`MainApp`]. It is responsible for,
+`Main` has only one class called link:{repoURL}/src/main/java/seedu/scheduler/MainApp.java[`MainApp`]. It is responsible
+for,
 
 * At app launch: Initializing the components in the correct sequence, and connecting them up with each other.
 * At shut down: Shutting down the components and invokes cleanup method where necessary.
 
-<<Design-Commons,*`Commons`*>> represents a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.
+<<Design-Commons,*`Commons`*>> represents a collection of classes used by multiple other components. Two of those
+classes play important roles at the architecture level.
 
-* `EventsCenter`: This class (written using https://github.com/Google/guava/wiki/EventBusExplained[Google's Event Bus library]) is used by components to communicate with other components using events (i.e. a form of _Event Driven_ design)
+* `EventsCenter`: This class (written using https://github.com/Google/guava/wiki/EventBusExplained[Google's Event Bus
+library]) is used by components to communicate with other components using events (i.e. a form of _Event Driven_ design)
 * `LogsCenter`: Used by many classes to write log messages to the App's log file.
 
 The rest of the App consists of four components.
@@ -161,7 +189,8 @@ Each of the four components
 * Defines its _API_ in an `interface` with the same name as the Component.
 * Exposes its functionality using a `{Component Name}Manager` class.
 
-For example, the `Logic` component (see the class diagram given below) defines it's API in the `Logic.java` interface and exposes its functionality using the `LogicManager.java` class.
+For example, the `Logic` component (see the class diagram given below) defines it's API in the `Logic.java` interface
+and exposes its functionality using the `LogicManager.java` class.
 
 .Class Diagram of the Logic Component
 image::LogicClassDiagram.png[width="800"]
@@ -169,21 +198,26 @@ image::LogicClassDiagram.png[width="800"]
 [discrete]
 ==== Events-Driven nature of the design
 
-The _Sequence Diagram_ below shows how the components interact for the scenario where the user issues the command `delete 1`.
+The _Sequence Diagram_ below shows how the components interact for the scenario where the user issues the command
+`delete 1`.
 
 .Component interactions for `delete 1` command (part 1)
 image::SDforDeleteEvent.png[width="800"]
 
 [NOTE]
-Note how the `Model` simply raises a `SchedulerChangedEvent` when the Scheduler data are changed, instead of asking the `Storage` to save the updates to the hard disk.
+Note how the `Model` simply raises a `SchedulerChangedEvent` when the Scheduler data are changed, instead of asking the
+`Storage` to save the updates to the hard disk.
 
-The diagram below shows how the `EventsCenter` reacts to that event, which eventually results in the updates being saved to the hard disk and the status bar of the UI being updated to reflect the 'Last Updated' time.
+The diagram below shows how the `EventsCenter` reacts to that event, which eventually results in the updates being saved
+to the hard disk and the status bar of the UI being updated to reflect the 'Last Updated' time.
 
 .Component interactions for `delete 1` command (part 2)
 image::SDforDeleteEventEventHandling.png[width="800"]
 
 [NOTE]
-Note how the event is propagated through the `EventsCenter` to the `Storage` and `UI` without `Model` having to be coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between components.
+Note how the event is propagated through the `EventsCenter` to the `Storage` and `UI` without `Model` having to be
+coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between
+components.
 
 The sections below give more details of each component.
 
@@ -195,9 +229,12 @@ image::UiClassDiagram.png[width="800"]
 
 *API* : link:{repoURL}/src/main/java/seedu/scheduler/ui/Ui.java[`Ui.java`]
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `EventListPanel`, `StatusBarFooter`, `BrowserPanel` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `EventListPanel`,
+`StatusBarFooter`, `BrowserPanel` etc. All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
 
-The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are in the `src/main/resources/view` folder. For example, the layout of the link:{repoURL}/src/main/java/seedu/scheduler/ui/MainWindow.java[`MainWindow`] is specified in link:{repoURL}/src/main/resources/view/MainWindow.fxml[`MainWindow.fxml`]
+The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that are
+in the `src/main/resources/view` folder. For example, the layout of the link:{repoURL}/src/main/java/seedu/scheduler/ui/
+MainWindow.java[`MainWindow`] is specified in link:{repoURL}/src/main/resources/view/MainWindow.fxml[`MainWindow.fxml`]
 
 The `UI` component,
 
@@ -220,7 +257,8 @@ link:{repoURL}/src/main/java/seedu/scheduler/logic/Logic.java[`Logic.java`]
 .  The command execution can affect the `Model` (e.g. adding an event) and/or raise events.
 .  The result of the command execution is encapsulated as a `CommandResult` object which is passed back to the `Ui`.
 
-Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("delete 1")` API call.
+Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("delete 1")` API
+call.
 
 .Interactions Inside the Logic Component for the `delete 1` Command
 image::DeleteEventSdForLogic.png[width="800"]
@@ -237,11 +275,14 @@ The `Model`,
 
 * stores a `UserPref` object that represents the user's preferences.
 * stores the Scheduler data.
-* exposes an unmodifiable `ObservableList<Event>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
+* exposes an unmodifiable `ObservableList<Event>` that can be 'observed' e.g. the UI can be bound to this list so that
+the UI automatically updates when the data in the list change.
 * does not depend on any of the other three components.
 
 [NOTE]
-As a more OOP model, we can store a `Tag` list in `Scheduler`, which `Event` can reference. This would allow `Scheduler` to only require one `Tag` object per unique `Tag`, instead of each `Event` needing their own `Tag` object. An example of how such a model may look like is given below. +
+As a more OOP model, we can store a `Tag` list in `Scheduler`, which `Event` can reference. This would allow `Scheduler`
+to only require one `Tag` object per unique `Tag`, instead of each `Event` needing their own `Tag` object. An example of
+how such a model may look like is given below. +
  +
 image:ModelClassBetterOopDiagram.png[width="800"]
 
@@ -279,46 +320,64 @@ Additionally, it implements the following operations:
 * `VersionedScheduler#undo()` -- Restores the previous scheduler state from its history.
 * `VersionedScheduler#redo()` -- Restores a previously undone scheduler state from its history.
 
-These operations are exposed in the `Model` interface as `Model#commitScheduler()`, `Model#undoScheduler()` and `Model#redoScheduler()` respectively.
+These operations are exposed in the `Model` interface as `Model#commitScheduler()`, `Model#undoScheduler()` and
+`Model#redoScheduler()` respectively.
 
 Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
 
-Step 1. The user launches the application for the first time. The `VersionedScheduler` will be initialized with the initial scheduler state, and the `currentStatePointer` pointing to that single scheduler state.
+Step 1. The user launches the application for the first time. The `VersionedScheduler` will be initialized with the
+initial scheduler state, and the `currentStatePointer` pointing to that single scheduler state.
 
 image::UndoRedoStartingStateListDiagram.png[width="800"]
 
-Step 2. The user executes `delete 5` command to delete the 5th event in the scheduler. The `delete` command calls `Model#commitScheduler()`, causing the modified state of the scheduler after the `delete 5` command executes to be saved in the `schedulerStateList`, and the `currentStatePointer` is shifted to the newly inserted scheduler state.
+Step 2. The user executes `delete 5` command to delete the 5th event in the scheduler. The `delete` command calls
+`Model#commitScheduler()`, causing the modified state of the scheduler after the `delete 5` command executes to be saved
+in the `schedulerStateList`, and the `currentStatePointer` is shifted to the newly inserted scheduler state.
 
 image::UndoRedoNewCommand1StateListDiagram.png[width="800"]
 
-Step 3. The user executes `add n/Holiday ...` to add a new event. The `add` command also calls `Model#commitscheduler()`, causing another modified scheduler state to be saved into the `schedulerStateList`.
+Step 3. The user executes `add n/Holiday ...` to add a new event. The `add` command also calls
+`Model#commitscheduler()`, causing another modified scheduler state to be saved into the `schedulerStateList`.
 
 image::UndoRedoNewCommand2StateListDiagram.png[width="800"]
 
 [NOTE]
-If a command fails its execution, it will not call `Model#commitScheduler()`, so the scheduler state will not be saved into the `schedulerStateList`.
+If a command fails its execution, it will not call `Model#commitScheduler()`, so the scheduler state will not be saved
+into the `schedulerStateList`.
 
-Step 4. The user now decides that adding the event was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoScheduler()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous scheduler state, and restores the scheduler to that state.
+Step 4. The user now decides that adding the event was a mistake, and decides to undo that action by executing the
+`undo` command. The `undo` command will call `Model#undoScheduler()`, which will shift the `currentStatePointer` once to
+the left, pointing it to the previous scheduler state, and restores the scheduler to that state.
 
 image::UndoRedoExecuteUndoStateListDiagram.png[width="800"]
 
 [NOTE]
-If the `currentStatePointer` is at index 0, pointing to the initial scheduler state, then there are no previous scheduler states to restore. The `undo` command uses `Model#canUndoScheduler()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the `currentStatePointer` is at index 0, pointing to the initial scheduler state, then there are no previous
+scheduler states to restore. The `undo` command uses `Model#canUndoScheduler()` to check if this is the case. If so, it
+will return an error to the user rather than attempting to perform the undo.
 
 The following sequence diagram shows how the `undo` operation works:
 
 image::UndoRedoSequenceDiagram.png[width="800"]
 
-The `redo` command does the opposite -- it calls `Model#redoScheduler()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the scheduler to that state.
+The `redo` command does the opposite -- it calls `Model#redoScheduler()`, which shifts the `currentStatePointer` once to
+the right, pointing to the previously undone state, and restores the scheduler to that state.
 
 [NOTE]
-If the `currentStatePointer` is at index `schedulerStateList.size() - 1`, pointing to the latest scheduler state, then there are no undone scheduler states to restore. The `redo` command uses `Model#canRedoScheduler()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the `currentStatePointer` is at index `schedulerStateList.size() - 1`, pointing to the latest scheduler state, then
+there are no undone scheduler states to restore. The `redo` command uses `Model#canRedoScheduler()` to check if this is
+the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the scheduler, such as `list`, will usually not call `Model#commitScheduler()`, `Model#undoScheduler()` or `Model#redoScheduler()`. Thus, the `schedulerStateList` remains unchanged.
+Step 5. The user then decides to execute the command `list`. Commands that do not modify the scheduler, such as `list`,
+will usually not call `Model#commitScheduler()`, `Model#undoScheduler()` or `Model#redoScheduler()`. Thus, the
+`schedulerStateList` remains unchanged.
 
 image::UndoRedoNewCommand3StateListDiagram.png[width="800"]
 
-Step 6. The user executes `clear`, which calls `Model#commitScheduler()`. Since the `currentStatePointer` is not pointing at the end of the `schedulerStateList`, all scheduler states after the `currentStatePointer` will be purged. We designed it this way because it no longer makes sense to redo the `add n/Party ...` command. This is the behavior that most modern desktop applications follow.
+Step 6. The user executes `clear`, which calls `Model#commitScheduler()`. Since the `currentStatePointer` is not
+pointing at the end of the `schedulerStateList`, all scheduler states after the `currentStatePointer` will be purged. We
+designed it this way because it no longer makes sense to redo the `add n/Party ...` command. This is the behavior that
+most modern desktop applications follow.
 
 image::UndoRedoNewCommand4StateListDiagram.png[width="800"]
 
@@ -340,11 +399,14 @@ image::UndoRedoActivityDiagram.png[width="650"]
 ===== Aspect: Data structure to support the undo/redo commands
 
 * **Alternative 1 (current choice):** Use a list to store the history of scheduler states.
-** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.
-** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both `HistoryManager` and `VersionedScheduler`.
+** Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming
+developers of our project.
+** Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both
+`HistoryManager` and `VersionedScheduler`.
 * **Alternative 2:** Use `HistoryManager` for undo/redo
 ** Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.
-** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things.
+** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates
+Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things.
 // end::undoredo[]
 
 // tag::EnterGoogleCalendarMode[]
@@ -383,9 +445,12 @@ image::EmptyLocalDataBaseDiagram.png[width="150"]
 After successful login, the login credential will be saved locally such that no future log-in is required. +
 
 **Step 3** +
--> After successful authentication, a success message is shown for the user and instruct the user to close the browser. +
--> At the same time, the application proceeds automatically for the downloading and merging of Google Calendar's events to local events. +
--> The flowchart below shows the process of deciding whether to prompt a login page or to proceed with a local credential file:
+-> After successful authentication, a success message is shown for the user and instruct the user to close the browser.
++
+-> At the same time, the application proceeds automatically for the downloading and merging of Google Calendar's events
+to local events. +
+-> The flowchart below shows the process of deciding whether to prompt a login page or to proceed with a local
+credential file:
 
 image::flowChatForDecisionOnLogIn.png[width="350"]
 
@@ -406,11 +471,13 @@ For current implementation, only events in the primary (default) calendar are ex
 -> For each event extracted, various ConvertEvent utility methods will be called `addGcEventToLocal` is called to convert the Google Extracted Event to local Event.
 
 **Step 6** +
--> In the `execute` method, the converted events are saved in the local database, together with other locally created Events.
+-> In the `execute` method, the converted events are saved in the local database, together with other locally created
+Events.
 
 ==== Design Considerations
 * **Save local login credential** (current choice)
-** Pro: Improves the user experience -- user won’t have to log in every time they use this command, it would be too troublesome and not user-friendly.
+** Pro: Improves the user experience -- user won’t have to log in every time they use this command, it would be too
+troublesome and not user-friendly.
 ** Con: Improper protection could cause a leak of personal info.
 
 * **Require login everytime** (alternative)
@@ -428,10 +495,13 @@ _{Explain here how the data encryption feature will be implemented}_
 
 === Logging
 
-We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations.
+We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and
+logging destinations.
 
-* The logging level can be controlled using the `logLevel` setting in the configuration file (See <<Implementation-Configuration>>)
-* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the specified logging level
+* The logging level can be controlled using the `logLevel` setting in the configuration file (See
+<<Implementation-Configuration>>)
+* The `Logger` for a class can be obtained using `LogsCenter.getLogger(Class)` which will log messages according to the
+specified logging level
 * Currently log messages are output through: `Console` and to a `.log` file.
 
 *Logging Levels*
@@ -439,33 +509,42 @@ We are using `java.util.logging` package for logging. The `LogsCenter` class is 
 * `SEVERE`: Critical problem detected which may possibly cause the termination of the application
 * `WARNING`: Can continue, but with caution
 * `INFO`: Information showing the noteworthy actions by the App
-* `FINE`: Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size
+* `FINE`: Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of
+just its size
 
 [[Implementation-Configuration]]
 === Configuration
 
-Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: `config.json`).
+Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file
+(default: `config.json`).
 
 // tag::add[]
 === Add Command
 ==== Current Implementation
 
-The `add` command allows the user to add new events to the scheduler. Add Command is facilitated by the `AddCommand` class.
-The format of this command is `add event n/EVENT_NAME [s/START_DATETIME] [e/END_DATETIME] [d/DESCRIPTION] [v/VENUE] [rt/RECURRING_TYPE] [ru/RECURRING_UNTIL_DATETIME] [t/TAG]…​`.
+The `add` command allows the user to add new events to the scheduler. Add Command is facilitated by the `AddCommand`
+class.
+The format of this command is `add event n/EVENT_NAME [s/START_DATETIME] [e/END_DATETIME] [d/DESCRIPTION] [v/VENUE]
+[rt/RECURRING_TYPE] [ru/RECURRING_UNTIL_DATETIME] [t/TAG]…​`.
 
-The command uses Natty, a natural language date parser written in Java to parse `DateTime` given by the user. When given a user inputted string, Natty will parse the string into a `LocalDateTime` class.
+The command uses Natty, a natural language date parser written in Java to parse `DateTime` given by the user. When given
+a user inputted string, Natty will parse the string into a `LocalDateTime` class.
 
-`AddCommand` requires the interaction between both `Logic` and `Model` Component. The `Logic` component comprises of `AddCommandParser` and `RepeatEventGenerator`.
-The `AddCommandParser` parses the user input and `RepeatEventGenerator` generates repeating events (if any). The `Model` component is responsible for updating the internal event list.
+`AddCommand` requires the interaction between both `Logic` and `Model` Component. The `Logic` component comprises of
+`AddCommandParser` and `RepeatEventGenerator`.
+The `AddCommandParser` parses the user input and `RepeatEventGenerator` generates repeating events (if any). The `Model`
+component is responsible for updating the internal event list.
 
 Given below is the execution flow of `Add Command`.
 
-1. When the user inputs a command, `LogicManager` will call the `parseCommand` method in `SchedulerParser` with the user input as arguments.
+1. When the user inputs a command, `LogicManager` will call the `parseCommand` method in `SchedulerParser` with the user
+input as arguments.
 2. If the user input is valid and contains the keyword `add`, `AddCommandParser` will be instantiated.
 3. `SchedulerParser` will then call the `parse` method of `AddCommandParser`.
 4. `AddCommandParser` parses the user input with the respective parsing methods.
-5. `generateAllRepeatedEvents` method in `RepeatEventGenerator` is invoked to generate a list of repeating events according to the repeat type of event specified by the user input.
-6. `AddCommand` will be instantiated with the list of events.
+5. `AddCommand` will be instantiated with the parsed event.
+6. `generateAllRepeatedEvents` method in `RepeatEventGenerator` is invoked to generate a list of repeating events
+according to the repeat type of the parsed event.
 7. `LogicManager` will then proceed to call the `execute()` method of `AddCommand`.
 8. `Model` Component will then add the list of events to an internal list of events using the `addEvents` method.
 
@@ -482,81 +561,189 @@ image::AddCommandActivityDiagram.png[width="650"]
 ===== Aspect: Generation of repeating events
 
 * **Alternative 1 (current choice):** Use `RepeatEventGenerator` to generate repeating events.
-** Pros: Singleton pattern. Easy to generate repeating events anywhere in the code base. Reduce `RepeatEventGenerator` object creations in testing. Uses the Single Responsibility Principle.
+** Pros: Singleton pattern. Easy to generate repeating events anywhere in the code base. Reduce `RepeatEventGenerator`
+object creations in testing. Uses the Single Responsibility Principle.
 ** Cons: May increase coupling across the code base. May increase the difficulty of testing due to the singleton object.
 * **Alternative 2:** Event model knows how to generate its repeating events by itself.
-** Pros: Will use less memory (e.g. generating events do not need to depend on another class to generate the repeating events).
+** Pros: Will use less memory (e.g. generating events do not need to depend on another class to generate the repeating
+events).
 ** Cons: Increase coupling.
 
 ===== Aspect: Datetime Parser
 
 * **Alternative 1 (current choice):** Use Natty, a natural language date parser.
-** Pros: Users do not need to conform to a standard format and able to enter `DateTime` in a more natural way. The user can also specify relative `DateTime`, which provides flexibility in `DateTime` input.
-** Cons: Parser may not be able to parse all natural language format due to ambiguity in language formats. There may also be a chance of parsing an invalid DateTime.
+** Pros: Users do not need to conform to a standard format and able to enter `DateTime` in a more natural way. The user
+can also specify relative `DateTime`, which provides flexibility in `DateTime` input.
+** Cons: Parser may not be able to parse all natural language format due to ambiguity in language formats. There may
+also be a chance of parsing an invalid DateTime.
 * **Alternative 2:** Use standard `DDMMYY` `HHMMSS` format for all `DateTime` inputs.
 ** Pros: Users will always be assured of correct `DateTime` being parsed if they provide the correct input.
 ** Cons: Reduce the flexibility as users have to conform to a standard format.
 // end::add[]
 
-
-// tag::Pop-up Alert[]
-=== Pop-up Alert
-
+// tag::edit[]
+=== Edit Command
 ==== Current Implementation
-The pop-up function is currently implemented with the `add` and `edit` command as input fields. We will implement a separate command `setReminder` for a later iteration.
-The format for input is `[re/xxHxxMxxS]` and multiple inputs are allowed for one event.
 
-* `add ... [/re xxHxxMxxS]` -- set pop-up alert `xxHxxMxxS` before the event start time. +
-   This will be replaced with `setReminder index xxHxxMxxS` in later iteration.
-* `edit ... [/re xxHxxMxxS]` -- change pop-up time for the event. +
-   This will be replaced with `addReminder` and `deleteReminder` commands in a later iteration.
+The `edit` command allows users to add edit existing events in the scheduler. Edit Command is facilitated by the `EditCommand` class.
+The format of this command is `edit INDEX [n/EVENT_NAME] [s/START_DATETIME] [e/END_DATETIME] [d/DESCRIPTION] [v/VENUE] [rt/REPEAT_TYPE] [ru/REPEAT_UNTIL_DAETIME] [t/TAG]…​ [re/REMINDER_TIME]…​ [-a | -u]`
 
-Pop-up Alert feature requires the interaction between both 'Logic' and 'Model' Component as explained below. The main utility responsible for this feature is `PopUpManager`.
+`EditCommand` requires the interaction between both `Logic` and `Model` Component. The `Logic` component comprises of `EditCommandParser` and `RepeatEventGenerator`.
+The `EditCommandParser` parses the user input and `RepeatEventGenerator` generates repeating events (if any). The `Model` component is responsible for updating the internal event list with the generated event(s).
 
-The storage for pop-up info is together with `Event` object in an XML file. It is stored as a `ReminderDurationList` object which is a `HashMap` of `Duration` object (parsed from xxHxxMxxS) and `Boolean` that indicates whether that time has popped-up.
-Every time `Event` object is updated or the Scheduler is opened, it will trigger an update in the `PopUpManager`.
+Given below is the execution flow of `Edit Command`.
 
-`PopUpManager` will call `EventPopUpInfo` in `Model` to generate `EventPopUpInfo` objects according to the number of reminder times the event has. If the event has 3 pop-up times,
-it will generate 3 `EventPopUpInfo` with 3 different `PopUp Time` while the rest of the info fields are the same.
+1. When the user inputs a command, `LogicManager` will call the `parseCommand` method in `SchedulerParser` with the user input as arguments.
+2. If the user input is valid and contains the keyword `edit`, `EditCommandParser` will be instantiated.
+3. `SchedulerParser` will then call the `parse` method of `EditCommandParser`.
+4. `EditCommandParser` parses the user input with the respective parsing methods.
+5. `EditCommand` will be instantiated with details of the edited event.
+6. `generateAllRepeatedEvents` method in `RepeatEventGenerator` is invoked to generate edited event(s) if user is trying to edit a set of repeating events with options `-a` or `-u`.
+7. `LogicManager` will then proceed to call the `execute()` method of `EditCommand`.
+8. `Model` Component will then find the targeted event(s) in internal list according to the parsed option type (no option or `-a` or `-u`).
+9. `Model` Component will replace the targeted event(s) with the edited event(s).
 
-The generated  `EventPopUpInfo` objects will be pushed to the `PopUp Queue` maintained by the `PopUpManager`. Its underlying data structure is a `Priority Queue`
-and key of the Reminder Time. When the App is opened, `PopUpManager` runs on a parallel thread to constantly check the queue to determine when to pop-up what alert.
-Once the reminder has popped up, `PopUpManager` will use `eventUid` (of `UUID` type) stored in the `PopUpInfo` object to find the `Event` and set True corresponding to the `Duration` that has popped up.
+The following sequence diagram demonstrates how the add operation works:
 
-The overall workflow can be represented by the below activity diagram:
+image::EditCommandSequenceDiagram.png[width="800"]
+image::EditCommandSequenceDiagram2.png[width="800"]
 
-image::PopUpActivityDiagram.png[width="500"]
+To find the targeted event(s) in `Model`(determined by the parsed option), we filter the internal event list using certain predicates.
 
-Below is an example usage scenario and explanation on the pop-up Alert mechanism behavior behind each step.
+The following code blocks shows the predicate used for `-a` and `-u` respectively.
 
-**Step 1** +
-The user opens Scheduler. The `PopUpManager` initializes the PopUp Queue and checks if any PopUp should have been popped up when the app is closed. +
-For example, the user opens the Scheduler at 10:00. He has a pop-up set at 9:30. It will appear once he opens the app to remind him that the event has passed. +
-At the same time, the `PopUpManager` will keep checking the Queue concurrently when the app is open.
+[source,java]
+----
+versionedScheduler.updateEvents(target, editedEvents,
+    event -> event.getEventSetUid().equals(target.getEventSetUid()));
+----
 
-**Step 2** +
-The user adds a new event "Assignment Due" and he wants to have two pop-up reminders before the deadline. He keys in `add n/Assignment Due s/today 10PM /re 4H /re 2H`. +
-The `AddCommandParser` will parse the input to a ReminderDurationList: `4H: False, 2H: False`
-The `AddCommand` will also trigger `PopUpManager` to update the Popup Queue. Two 'EventPopUpInfo' objects with 'PopUpTime' 6 PM and 8 PM separately will be initiated and added into the PopUp Queue.
-The user can close the Scheduler or use other functions of the Scheduler.
-
-**Step 3** +
-At 6 PM on that day, if the Scheduler is open, a pop-up alert will appear. The `PopUpManager` pop out the corresponding `EventPopUpInfo`.
-Meanwhile, it will use the `eventUid` (of `UUID` type) stored in `EventPopUpInfo` to find the `Event` object and set `4H: True`. +
-The 8 PM pop-up is still in the Pop-up queue.
+[source,java]
+----
+versionedScheduler.updateEvents(target, editedEvents, event ->
+    event.getEventSetUid().equals(target.getEventSetUid())
+    && event.getStartDateTime().compareTo(target.getStartDateTime()) >= 0);
+----
 
 ==== Design Considerations
-* **Use HashMap to store ReminderDurationList** (current choice)
-** Pro: Faster searching when deleting. The user can also view the reminder times he has set as part of the event info since it will not be deleted when it popped up.
-** Con: More complex implementation
 
-* **Use ArrayList to store ReminderDurationList** (alternative)
-** Store the `Durations` in an ArrayList, every time the `EventPopUpInfo` is popped out, delete the corresponding `Duration`
+===== Aspect: Generation of edited events
+
+* **Alternative 1 (current choice):** Generating edited events also targets first instance of event.
+** Pros: For `-a` option, we can generate all the repeating events starting from the first event in repeating event set even when the user targets the second event in the repeating event set.
++
+E.g. In a set of events: `event A1, event A2 and eventA3`, when we input the command `edit 2 rt/weekly -a`, we can check whether `event A1` has the same day of week as `eventA2`. If yes, we generate new events starting from `eventA1` else, start from `eventA2`.
+** Cons: New Events generated will always be based on the targeted event. So, when edit the `eventA1` *only* first, then edit the *whole set (all)* of events starting from the `eventA2`, the subsequent events generated will be based on `eventA2` which overrides any changes that were made individually to `eventA1`.
+* **Alternative 2:** Generating edited events based on selected event and delete previous events.
+** Pros: Do not need to be know what is in the model before generating events.
+** Cons: Events generated may not be as intuitive to users because the if we start editing a repeated event from the second event in a set, the first event will always be deleted.
+// end::edit[]
+
+// tag::delete[]
+=== Delete Command
+==== Current Implementation
+
+The `delete` command allows users to delete existing events in the scheduler. Delete Command is facilitated by the `DeleteCommand` class.
+The format of this command is `delete INDEX [-a | -u]`.
+
+`DeleteCommand` requires the interaction between both `Logic` and `Model` Component. The `Logic` component comprises of `DeleteCommandParser`.
+The `DeleteCommandParser` parses the user input. The `Model` component is responsible for deleting the internal event list(s).
+
+Given below is the execution flow of `Delete Command`.
+
+1. When the user inputs a command, `LogicManager` will call the `parseCommand` method in `SchedulerParser` with the user input as arguments.
+2. If the user input is valid and contains the keyword `edit`, `DeleteCommandParser` will be instantiated.
+3. `SchedulerParser` will then call the `parse` method of `EditCommandParser`.
+4. `DeleteCommandParser` parses the user input with the respective parsing methods.
+5. `EditCommand` will be instantiated with index of the event to be deleted.
+7. `LogicManager` will then proceed to call the `execute()` method of `DeleteCommand`.
+8. `Model` Component will then find the targeted event(s) in internal list according to the parsed option type (no option or `-a` or `-u`).
+9. `Model` Component will delete the targeted event(s).
+// end::delete[]
+
+
+
+// tag::Reminder Feature[]
+=== Reminder Operations
+
+==== Current Implementation
+The input is duration in the following format: `[re/xxHxxMxxS]` , meaning a reminder will pop up xxHxxMxxS before the event start time. Multiple unique reminders are allowed for one event. +
+
+The reminder operations are first implemented with the `add` and `edit` command as input fields. Commands `addReminder`, `deleteReminder`, `postponeReminder`
+are then implemented by inheriting editCommand class for more customised reminder operations. The differences in logic between three reminder commands and `edit` are explained below:
+
+* `addReminder INDEX [/re xxHxxMxxS]...[-a|-u]` +
+   Add reminders INCREMENTALLY to the event, whereas `edit` will replace the reminders of the event by input durations.
+* `deleteReminder INDEX [/re xxHxxMxxS]...[-a|-u]` +
+   Delete reminders if present. If edit is used for delete reminders, user will have to input all the reminders he/she wants to keep.
+* `postponeReminder INDEX [/re xxHxxMxxS] [-a|-u]` +
+   Postpone all reminders of the event by the duration specified.
+
+Pop-up Alert feature requires the interaction between both 'Logic' and 'Model' Component as shown by the class diagram and explanation below.
+The class diagram only shows relevant classes for clarity.
+
+image::ReminderClassDiagram.png[width="700"]
+
+The main utility responsible for this feature is `PopUpManager`, which is implemented in a singleton pattern since it should have no more than just one instance. +
+
+`Event` has a field `ReminderDurationList` which is a set of `Duration` objects. A `Duration` such as `30m` represents the period before the event start time that reminder will pop up.
+Therefore each `Event` object can have multiple unique `Duration` objects in `ReminderDurationList`, and thus multiple reminders. +
+
+Each `Duration`, together with the `Event` object itself, will be used by `PopUpManager` to generate 1 `EventPopUpInfo` object, which correspond to 1 reminder. +
+
+Except for `Duration`, `EventPopUpInfo` object also has a `DateTime` field (PopUpTime) calculated by `Start Time - Duration`. It is the time the corresponding reminder should popped up.
+The rest of the fields of `EventPopUpInfo` is the same as the `Event` object. Descriptive fields such as `Description`, `Venue`, `EndTime` are needed for display reminders.
+While the two IDs are used for `PopUpManager` 's various updating methods. +
+
+`PopUpManager` takes in `Event` object to generate `EventPopUpInfo` objects and then stores them in a `PriorityQueue` (PopUpQueue)
+order by PopUpTime. The startRunning() method in PopUpManager will run in parallel
+to constantly check when to pop an `EventPopUpInfo` and call `PopUp` in `UI` to display the reminder. +
+
+
+Every time a command is executed and handled by `ModelManager`, `ModelManager` will call relevant method in `PopUpManager` to update PopUpQueue.
+The sequence diagram below illustrate a generic case when user key in `edit` command. Some parts are omitted for clarity. +
+
+image::ReminderSequenceDiagram.png[width="800"]
+
+
+Below is an example usage scenario with sequence diagram to illustrate how `PopUpManager` is updated +
+
+1. The user has a set of recurring events: CS2103 lecture that happen every Friday 4pm - 6pm. He has set reminders to be 1H before the start time.
+
+2. Now is week 7 and the time for the lectures has just changed onwards. So he "edit 7 s/xxx 2pm e/xxx 4pm -u".
+
+3. When updateUpcomingEvents(eventToEdit, editedEvents) in `ModelManager` is called, this method will call editUpcoming(eventToEdit, editedEvents) in `PopUpManager`, which
+runs deleteUpcoming(..) and then add(..) +
+
+4. deleteUpcoming will delete all `EventPopUpInfo` objects that share the same `SetId` with eventToEdit but have
+a later start time. Then add method will generate all editedEvents' corresponding 'EventPopUpInfo' and add them to PopUpQueue.
+
+[Note]
+====
+* At any time, ONLY EventPopUpInfo with PopUpTime in the future will be added to the queue.
+* Any updates to the Scheduler will trigger corresponding updates in PopUpManager.
+====
+
+The updates in `PopUpManager` takes place on the main thread. However, the checking of PopUpQueue takes place on a parallel thread as illustrated by the activity diagram.
+
+image::ReminderActivityDiagram.png[width="500"]
+
+
+==== Design Considerations
+* **Use Set to store ReminderDurationList** (current choice)
+** Store the `Durations` in a Set. Do nothing to the Set when `EventPopUpInfo` is popped out. Every time adding `EventPopUpInfo` to PopUpQueue,
+only those with future PopUpDateTime will be added.
 ** Pro: Easier implementation
-** Con: Searching and Deleting the Duration will take longer time.
+** Con: Will not be able to keep track of those reminders that have passed when the app is not open. Past reminders cannot pop up when the app opens.
 
-// end::Pop-up Alert[]
+* **Use HashMap to store ReminderDurationList** (alternative)
+** Store as `Duration`: `Boolean` (if the reminder has popped up). Every time a reminder pops up, set to `True`.
+** Pro: Will be able to keep track of those reminders that have passed when the app is not open.
+When the user open the app, `Duration` with `False` will generate corresponding `EventPopUpInfo` to add to the queue.
+They will be popped up as past reminders to remind the users they might have miss some important events.
+** Con: This design will be complicated and affect `undo` and `redo` function.
 
+// end::Reminder Feature[]
 
 // tag::addDeleteListTag[]
 === Add/Delete/List Tags
@@ -566,15 +753,19 @@ Current tag is implemented as a feature of an event instead of an independent ob
 
 Similar to add event command, all tags are stored in local storage.
 
-The `addTag` command allows the user to add new tags to the scheduler. Add Tag Command is facilitated by the `AddTagCommand` class.
+The `addTag` command allows the user to add new tags to the scheduler. Add Tag Command is facilitated by the
+`AddTagCommand` class.
 The format of this command is `add [TAG_NAME]`.
 
-`AddTagCommand` requires the interaction between both `Logic` and `Model` Component. The `Logic` component comprises of `AddTagCommandParser`.
-The `AddTagCommandParser` parses the user input and generates a tag. The `Model` component is responsible for updating the internal tag list.
+`AddTagCommand` requires the interaction between both `Logic` and `Model` Component. The `Logic` component comprises of
+`AddTagCommandParser`.
+The `AddTagCommandParser` parses the user input and generates a tag. The `Model` component is responsible for updating
+the internal tag list.
 
 Given below is the execution flow of `Add Tag Command`.
 
-1. When the user inputs a command, `LogicManager` will call the `parseCommand` method in `SchedulerParser` with the user input as arguments.
+1. When the user inputs a command, `LogicManager` will call the `parseCommand` method in `SchedulerParser` with the user
+input as arguments.
 2. If the user input is valid and contains the keyword `addTag`, `AddTagCommandParser` will be instantiated.
 3. `SchedulerParser` will then call the `parse` method of `AddTagCommandParser`.
 4. `AddTagCommandParser` parses the user input with the respective parsing methods.
@@ -597,29 +788,40 @@ To be updated.
 === Command Aliasing
 ==== Current Implementation
 - For the `add` command, typing `add`, `ad` or even simply `a` with the appropriate parameters can add an event. +
-- Similarly, for the 'delete' command, typing one of the following -- `delete`, `delet`, dele`, `del`, `de` or `d` with the appropriate parameters can delete an event. +
-- Because of technical restrictions in programming, if there are multiple (2 or more) commands that start with the same alphabetical letter, for e.g. `history` and `help`, in that case: +
--> We have chosen to prioritize `help` over the `history` command. It is as follows: `history` can be invoked with `history`, `histor` ... all the way to `hi`. However, `help` can be called with `help`, `he` ... `h`.
+- Similarly, for the 'delete' command, typing one of the following -- `delete`, `delet`, dele`, `del`, `de` or `d` with
+the appropriate parameters can delete an event. +
+- Because of technical restrictions in programming, if there are multiple (2 or more) commands that start with the same
+alphabetical letter, for e.g. `history` and `help`, in that case: +
+-> We have chosen to prioritize `help` over the `history` command. It is as follows: `history` can be invoked with
+`history`, `histor` ... all the way to `hi`. However, `help` can be called with `help`, `he` ... `h`.
 - The same logic applies to the `edit` and `exit` command.
--> We have chosen to prioritize `exit` over the `edit` command. `exit` can be invoked with `exit` down to `e` while `edit` can be invoked down till `ed` with the appropriate parameters specified.
-- The alias(es) of each command go through the same logic as the actual command itself. They are parsed through the `parseCommand()` method in the {repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser.java`] class. +
+-> We have chosen to prioritize `exit` over the `edit` command. `exit` can be invoked with `exit` down to `e` while
+`edit` can be invoked down till `ed` with the appropriate parameters specified.
+- The alias(es) of each command go through the same logic as the actual command itself. They are parsed through the
+`parseCommand()` method in the
+{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser.java`] class. +
 
-**Final notes:** +
-- The current implementation may not be the most efficient. We create constants of `public static final String` type and name them as `COMMAND_ALIAS_ONE`, `COMMAND_ALIAS_TWO`, etc... in the affected commands' respective classes.  +
-=> A suggestion would be to create a suitable `CommandAlias` class and/or use data structures like `enums`, `HashMap`, `TreeMap` etc... for the command aliases. +
-- Also, this feature may be replaced by another feature in the future. See <<proposed-auto-completion-of-commands, [Proposed]Auto-Completion of Commands>> below for more. +
+==== Final notes:
+- The current implementation may not be the most efficient. We create constants of `public static final String` type and
+name them as `COMMAND_ALIAS_ONE`, `COMMAND_ALIAS_TWO`, etc... in the affected commands' respective classes. +
+=> A suggestion would be to create a suitable `CommandAlias` class and/or use data structures like `enums`, `HashMap`,
+`TreeMap` etc... for the command aliases. +
 - An activity diagram (a _swimlane diagram_) showing how an alias of the `history` command would work is shown below: +
 
 image::HistoryCommandAliasActivityDiagram.png[width="500"]
 
-_Note: The above swimlane diagram is a simplified activity diagram which omits details of interactions with interfaces such as {repoURL}/src/main/java/seedu/scheduler/model/Model.java[`Model.java`] and/or other relevant classes._
-//end::commandAliasing[]
+_Note: The above swimlane diagram is a simplified activity diagram which omits details of interactions with interfaces
+such as {repoURL}/src/main/java/seedu/scheduler/model/Model.java[`Model.java`] and/or other relevant classes._
+// end::commandAliasing[]
 
 
 // tag::autoComplete[]
-=== [Proposed] Auto-Completion of Commands
-==== Future Implementation
-How this feature could possibly be implemented would be using the auto-complete feature available in the https://bitbucket.org/controlsfx/controlsfx/[ControlsFX] library.
+=== Auto-Completion of Commands
+==== Implementation
+This feature is implemented would using the auto-complete feature available in the
+https://bitbucket.org/controlsfx/controlsfx/[ControlsFX] library. To be precise, the method
+`TextFields.bindAutoCompletion()` is invoked in the constructor of the
+{repoURL}/src/main/java/seedu/scheduler/ui/CommandBox.java[`CommandBox#Command`] class.
 // end::autoComplete[]
 
 
@@ -628,12 +830,15 @@ How this feature could possibly be implemented would be using the auto-complete 
 We use AsciiDoc for writing documentation.
 
 [NOTE]
-We chose AsciiDoc over Markdown because AsciiDoc, although a bit more complex than Markdown, provides more flexibility in formatting.
+We chose AsciiDoc over Markdown because AsciiDoc, although a bit more complex than Markdown, provides more flexibility
+in formatting.
 
 === Editing Documentation
 
-See <<UsingGradle#rendering-asciidoc-files, UsingGradle.adoc>> to learn how to render `.adoc` files locally to preview the end result of your edits.
-Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your `.adoc` files in real-time.
+See <<UsingGradle#rendering-asciidoc-files, UsingGradle.adoc>> to learn how to render `.adoc` files locally to preview
+the end result of your edits.
+Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made
+to your `.adoc` files in real-time.
 
 === Publishing Documentation
 
@@ -641,14 +846,18 @@ See <<UsingTravis#deploying-github-pages, UsingTravis.adoc>> to learn how to dep
 
 === Converting Documentation to PDF format
 
-We use https://www.google.com/chrome/browser/desktop/[Google Chrome] for converting documentation to PDF format, as Chrome's PDF engine preserves hyperlinks used in web pages.
+We use https://www.google.com/chrome/browser/desktop/[Google Chrome] for converting documentation to PDF format, as
+Chrome's PDF engine preserves hyperlinks used in web pages.
 
 Here are the steps to convert the project documentation files to PDF format.
 
-.  Follow the instructions in <<UsingGradle#rendering-asciidoc-files, UsingGradle.adoc>> to convert the AsciiDoc files in the `docs/` directory to HTML format.
-.  Go to your generated HTML files in the `build/docs` folder, right click on them and select `Open with` -> `Google Chrome`.
+.  Follow the instructions in <<UsingGradle#rendering-asciidoc-files, UsingGradle.adoc>> to convert the AsciiDoc files
+in the `docs/` directory to HTML format.
+.  Go to your generated HTML files in the `build/docs` folder, right click on them and select `Open with` -> `Google
+Chrome`.
 .  Within Chrome, click on the `Print` option in Chrome's menu.
-.  Set the destination to `Save as PDF`, then click `Save` to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.
+.  Set the destination to `Save as PDF`, then click `Save` to save a copy of the file in PDF format. For best results,
+use the settings indicated in the screenshot below.
 
 .Saving documentation as PDF files in Chrome
 image::chrome_save_as_pdf.png[width="300"]
@@ -656,7 +865,9 @@ image::chrome_save_as_pdf.png[width="300"]
 [[Docs-SiteWideDocSettings]]
 === Site-wide Documentation Settings
 
-The link:{repoURL}/build.gradle[`build.gradle`] file specifies some project-specific https://asciidoctor.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files within this project are rendered.
+The link:{repoURL}/build.gradle[`build.gradle`] file specifies some project-specific
+https://asciidoctor.org/docs/user-manual/#attributes[asciidoc attributes] which affects how all documentation files
+within this project are rendered.
 
 [TIP]
 Attributes left unset in the `build.gradle` file will use their *default value*, if any.
@@ -686,9 +897,11 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 [[Docs-PerFileDocSettings]]
 === Per-file Documentation Settings
 
-Each `.adoc` file may also specify some file-specific https://asciidoctor.org/docs/user-manual/#attributes[asciidoc attributes] which affects how the file is rendered.
+Each `.adoc` file may also specify some file-specific https://asciidoctor.org/docs/user-manual/#attributes[asciidoc
+attributes] which affects how the file is rendered.
 
-Asciidoctor's https://asciidoctor.org/docs/user-manual/#builtin-attributes[built-in attributes] may be specified and used as well.
+Asciidoctor's https://asciidoctor.org/docs/user-manual/#builtin-attributes[built-in attributes] may be specified and
+used as well.
 
 [TIP]
 Attributes left unset in `.adoc` files will use their *default value*, if any.
@@ -714,15 +927,17 @@ _{asterisk} Official SE-EDU projects only_
 
 === Site Template
 
-The files in link:{repoURL}/docs/stylesheets[`docs/stylesheets`] are the https://developer.mozilla.org/en-US/docs/Web/CSS[CSS stylesheets] of the site.
-You can modify them to change some properties of the site's design.
+The files in link:{repoURL}/docs/stylesheets[`docs/stylesheets`] are the
+https://developer.mozilla.org/en-US/docs/Web/CSS[CSS stylesheets] of the site. You can modify them to change some
+properties of the site's design.
 
 The files in link:{repoURL}/docs/templates[`docs/templates`] controls the rendering of `.adoc` files into HTML5.
 These template files are written in a mixture of https://www.ruby-lang.org[Ruby] and http://slim-lang.com[Slim].
 
 [WARNING]
 ====
-Modifying the template files in link:{repoURL}/docs/templates[`docs/templates`] requires some knowledge and experience with Ruby and Asciidoctor's API.
+Modifying the template files in link:{repoURL}/docs/templates[`docs/templates`] requires some knowledge and experience
+with Ruby and Asciidoctor's API.
 You should only modify them if you need greater control over the site's layout than what stylesheets can provide.
 The SE-EDU team does not provide support for modified template files.
 ====
@@ -735,7 +950,8 @@ The SE-EDU team does not provide support for modified template files.
 There are three ways to run tests.
 
 [TIP]
-The most reliable way to run tests is the 3rd one. The first two methods might fail some GUI tests due to platform/resolution-specific idiosyncrasies.
+The most reliable way to run tests is the 3rd one. The first two methods might fail some GUI tests due to platform/
+resolution-specific idiosyncrasies.
 
 *Method 1: Using IntelliJ JUnit test runner*
 
@@ -751,23 +967,29 @@ See <<UsingGradle#, UsingGradle.adoc>> for more info on how to run tests using G
 
 *Method 3: Using Gradle (headless)*
 
-Thanks to the https://github.com/TestFX/TestFX[TestFX] library we use, our GUI tests can be run in the _headless_ mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.
+Thanks to the https://github.com/TestFX/TestFX[TestFX] library we use, our GUI tests can be run in the _headless_ mode.
+In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the
+Computer while the tests are running.
 
-To run tests in headless mode, open a console and run the command `gradlew clean headless allTests` (Mac/Linux: `./gradlew clean headless allTests`)
+To run tests in headless mode, open a console and run the command `gradlew clean headless allTests` (Mac/Linux:
+`./gradlew clean headless allTests`)
 
 === Types of tests
 
 We have two types of tests:
 
 .  *GUI Tests* - These are tests involving the GUI. They include,
-.. _System Tests_ that test the entire App by simulating user actions on the GUI. These are in the `systemtests` package.
+.. _System Tests_ that test the entire App by simulating user actions on the GUI. These are in the `systemtests`
+package.
 .. _Unit tests_ that test the individual components. These are in `seedu.scheduler.ui` package.
 .  *Non-GUI Tests* - These are tests not involving the GUI. They include,
 ..  _Unit tests_ targeting the lowest level methods/classes. +
 e.g. `seedu.scheduler.commons.StringUtilTest`
-..  _Integration tests_ that are checking the integration of multiple code units (those code units are assumed to be working). +
+..  _Integration tests_ that are checking the integration of multiple code units (those code units are assumed to be
+working). +
 e.g. `seedu.scheduler.storage.StorageManagerTest`
-..  Hybrids of unit and integration tests. These tests are checking multiple code units as well as how they are connected together. +
+..  Hybrids of unit and integration tests. These tests are checking multiple code units as well as how they are
+connected together. +
 e.g. `seedu.scheduler.logic.LogicManagerTest`
 
 
@@ -785,14 +1007,18 @@ See <<UsingGradle#, UsingGradle.adoc>> to learn how to use Gradle for build auto
 
 === Continuous Integration
 
-We use https://travis-ci.org/[Travis CI] and https://www.appveyor.com/[AppVeyor] to perform _Continuous Integration_ on our projects. See <<UsingTravis#, UsingTravis.adoc>> and <<UsingAppVeyor#, UsingAppVeyor.adoc>> for more details.
+We use https://travis-ci.org/[Travis CI] and https://www.appveyor.com/[AppVeyor] to perform _Continuous Integration_ on
+our projects. See <<UsingTravis#, UsingTravis.adoc>> and <<UsingAppVeyor#, UsingAppVeyor.adoc>> for more details.
 
 === Coverage Reporting
 
-We use https://coveralls.io/[Coveralls] to track the code coverage of our projects. See <<UsingCoveralls#, UsingCoveralls.adoc>> for more details.
+We use https://coveralls.io/[Coveralls] to track the code coverage of our projects. See <<UsingCoveralls#,
+UsingCoveralls.adoc>> for more details.
 
 === Documentation Previews
-When a pull request makes changes to AsciiDoc files, you can use https://www.netlify.com/[Netlify] to see a preview of how the HTML version of those AsciiDoc files will look like when the pull request is merged. See <<UsingNetlify#, UsingNetlify.adoc>> for more details.
+When a pull request makes changes to AsciiDoc files, you can use https://www.netlify.com/[Netlify] to see a preview of
+how the HTML version of those AsciiDoc files will look like when the pull request is merged. See <<UsingNetlify#,
+UsingNetlify.adoc>> for more details.
 
 === Making a Release
 
@@ -801,11 +1027,15 @@ Here are the steps to create a new release.
 .  Update the version number in link:{repoURL}/src/main/java/seedu/scheduler/MainApp.java[`MainApp.java`].
 .  Generate a JAR file <<UsingGradle#creating-the-jar-file, using Gradle>>.
 .  Tag the repo with the version number. e.g. `v0.1`
-.  https://help.github.com/articles/creating-releases/[Create a new release using GitHub] and upload the JAR file you created.
+.  https://help.github.com/articles/creating-releases/[Create a new release using GitHub] and upload the JAR file you
+created.
 
 === Managing Dependencies
 
-A project often depends on third-party libraries. For example, Scheduler depends on the http://wiki.fasterxml.com/JacksonHome[Jackson library] for XML parsing. Managing these _dependencies_ can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives. +
+A project often depends on third-party libraries. For example, Scheduler depends on the
+http://wiki.fasterxml.com/JacksonHome[Jackson library] for XML parsing. Managing these _dependencies_ can be automated
+using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.
++
 a. Include those libraries in the repo (this bloats the repo size) +
 b. Require developers to download those libraries manually (this creates extra work for developers)
 
@@ -815,31 +1045,44 @@ b. Require developers to download those libraries manually (this creates extra w
 
 A suggested path for new programmers:
 
-1. First, add small local-impact (i.e. the impact of the change does not go beyond the component) enhancements to one component at a time. Some suggestions are given in <<GetStartedProgramming-EachComponent>>.
+1. First, add small local-impact (i.e. the impact of the change does not go beyond the component) enhancements to one
+component at a time. Some suggestions are given in <<GetStartedProgramming-EachComponent>>.
 
-2. Next, add a feature that touches multiple components to learn how to implement an end-to-end feature across all components. <<GetStartedProgramming-RemarkCommand>> explains how to go about adding such a feature.
+2. Next, add a feature that touches multiple components to learn how to implement an end-to-end feature across all
+components. <<GetStartedProgramming-RemarkCommand>> explains how to go about adding such a feature.
 
 [[GetStartedProgramming-EachComponent]]
 === Improving each component
 
-Each individual exercise in this section is component-based (i.e. you would not need to modify the other components to get it to work).
+Each individual exercise in this section is component-based (i.e. you would not need to modify the other components to
+get it to work).
 
 [discrete]
 ==== `Logic` component
 
-*Scenario:* You are in charge of `logic`. During dogfooding, your team realizes that it is troublesome for the user to type the whole command in order to execute a command. Your team devises some strategies to help cut down the amount of typing necessary, and one of the suggestions was to implement aliases for the command words. Your job is to implement such aliases.
+*Scenario:* You are in charge of `logic`. During dogfooding, your team realizes that it is troublesome for the user to
+type the whole command in order to execute a command. Your team devises some strategies to help cut down the amount of
+typing necessary, and one of the suggestions was to implement aliases for the command words. Your job is to implement
+such aliases.
 
 [TIP]
 Do take a look at <<Design-Logic>> before attempting to modify the `Logic` component.
 
-. Add a shorthand equivalent alias for each of the individual commands. For example, besides typing `clear`, the user can also type `c` to remove all events in the list.
+. Add a shorthand equivalent alias for each of the individual commands. For example, besides typing `clear`, the user
+can also type `c` to remove all events in the list.
 +
 ****
 * Hints
-** Just like we store each individual command word constant `COMMAND_WORD` inside `*Command.java` (e.g.  link:{repoURL}/src/main/java/seedu/scheduler/logic/commands/FindCommand.java[`FindCommand#COMMAND_WORD`], link:{repoURL}/src/main/java/seedu/scheduler/logic/commands/DeleteCommand.java[`DeleteCommand#COMMAND_WORD`]), you need a new constant for aliases as well (e.g. `FindCommand#COMMAND_ALIAS`).
-** link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser`] is responsible for analyzing command words.
+** Just like we store each individual command word constant `COMMAND_WORD` inside `*Command.java` (e.g.
+link:{repoURL}/src/main/java/seedu/scheduler/logic/commands/FindCommand.java[`FindCommand#COMMAND_WORD`],
+link:{repoURL}/src/main/java/seedu/scheduler/logic/commands/DeleteCommand.java[`DeleteCommand#COMMAND_WORD`]), you need
+a new constant for aliases as well (e.g. `FindCommand#COMMAND_ALIAS`).
+** link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser`] is responsible for
+analyzing command words.
 * Solution
-** Modify the switch statement in link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`schedulerParser#parseCommand(String)`] such that both the proper command word and alias can be used to execute the same intended command.
+** Modify the switch statement in
+link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`schedulerParser#parseCommand(String)`]
+such that both the proper command word and alias can be used to execute the same intended command.
 ** Add new tests for each of the aliases that you have added.
 ** Update the user guide to document the new aliases.
 ** See this https://github.com/se-edu/addressbook-level4/pull/785[PR] for the full solution.
@@ -848,7 +1091,10 @@ Do take a look at <<Design-Logic>> before attempting to modify the `Logic` compo
 [discrete]
 ==== `Model` component
 
-*Scenario:* You are in charge of `model`. One day, the `logic`-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from everyone in the scheduler, but the model API does not support such a functionality at the moment. Your job is to implement an API method so that your teammate can use your API to implement his command.
+*Scenario:* You are in charge of `model`. One day, the `logic`-in-charge approaches you for help. He wants to implement
+a command such that the user is able to remove a particular tag from everyone in the scheduler, but the model API does
+not support such a functionality at the moment. Your job is to implement an API method so that your teammate can use
+your API to implement his command.
 
 [TIP]
 Do take a look at <<Design-Model>> before attempting to modify the `Model` component.
@@ -857,12 +1103,22 @@ Do take a look at <<Design-Model>> before attempting to modify the `Model` compo
 +
 ****
 * Hints
-** The link:{repoURL}/src/main/java/seedu/scheduler/model/Model.java[`Model`] and the link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`] API need to be updated.
+** The link:{repoURL}/src/main/java/seedu/scheduler/model/Model.java[`Model`] and the
+link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`] API need to be updated.
 ** Think about how you can use SLAP to design the method. Where should we place the main logic of deleting tags?
-**  Find out which of the existing API methods in  link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`] and link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`] classes can be used to implement the tag removal logic. link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`] allows you to update an event, and link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`] allows you to update the tags.
+**  Find out which of the existing API methods in
+link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`] and
+link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`] classes can be used to implement the tag
+removal logic. link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`] allows you to update an
+event, and link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`] allows you to update the tags.
 * Solution
-** Implement a `removeTag(Tag)` method in link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`]. Loop through each event, and remove the `tag` from each event.
-** Add a new API method `deleteTag(Tag)` in link:{repoURL}/src/main/java/seedu/scheduler/model/ModelManager.java[`ModelManager`]. Your link:{repoURL}/src/main/java/seedu/scheduler/model/ModelManager.java[`ModelManager`] should call `Scheduler#removeTag(Tag)`.
+** Implement a `removeTag(Tag)` method in
+link:{repoURL}/src/main/java/seedu/scheduler/model/Scheduler.java[`Scheduler`]. Loop through each event, and remove the
+`tag` from each event.
+** Add a new API method `deleteTag(Tag)` in
+link:{repoURL}/src/main/java/seedu/scheduler/model/ModelManager.java[`ModelManager`]. Your
+link:{repoURL}/src/main/java/seedu/scheduler/model/ModelManager.java[`ModelManager`] should call
+`Scheduler#removeTag(Tag)`.
 ** Add new tests for each of the new public methods that you have added.
 ** See this https://github.com/se-edu/addressbook-level4/pull/790[PR] for the full solution.
 ****
@@ -870,12 +1126,18 @@ Do take a look at <<Design-Model>> before attempting to modify the `Model` compo
 [discrete]
 ==== `Ui` component
 
-*Scenario:* You are in charge of `ui`. During a beta testing session, your team is observing how the users use your scheduler application. You realize that one of the users occasionally tries to delete non-existent tags from an event, because the tags all look the same visually, and the user got confused. Another user made a typing mistake in their command but did not realize they had done so because the error message wasn't prominent enough. A third user keeps scrolling down the list because they keep forgetting the index of the last event in the list. Your job is to implement improvements to the UI to solve all these problems.
+*Scenario:* You are in charge of `ui`. During a beta testing session, your team is observing how the users use your
+scheduler application. You realize that one of the users occasionally tries to delete non-existent tags from an event,
+because the tags all look the same visually, and the user got confused. Another user made a typing mistake in their
+command but did not realize they had done so because the error message wasn't prominent enough. A third user keeps
+scrolling down the list because they keep forgetting the index of the last event in the list. Your job is to
+implementimprovements to the UI to solve all these problems.
 
 [TIP]
 Do take a look at <<Design-Ui>> before attempting to modify the `UI` component.
 
-. Use different colors for different tags inside event cards. For example, `holidays` tags can be all in brown, and `appointments` tags can be all in yellow.
+. Use different colors for different tags inside event cards. For example, `holidays` tags can be all in brown, and
+`appointments` tags can be all in yellow.
 +
 **Before**
 +
@@ -887,16 +1149,26 @@ image::getting-started-ui-tag-after.png[width="300"]
 +
 ****
 * Hints
-** The tag labels are created inside link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[the `EventCard` constructor] (`new Label(tag.tagName)`). https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html[JavaFX's `Label` class] allows you to modify the style of each Label, such as changing its color.
+** The tag labels are created inside link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[the
+`EventCard` constructor] (`new Label(tag.tagName)`).
+https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html[JavaFX's `Label` class] allows you to modify
+the style of each Label, such as changing its color.
 ** Use the .css attribute `-fx-background-color` to add a color.
-** You may wish to modify link:{repoURL}/src/main/resources/view/DarkTheme.css[`DarkTheme.css`] to include some pre-defined colors using CSS, especially if you have experience with web-based CSS.
+** You may wish to modify link:{repoURL}/src/main/resources/view/DarkTheme.css[`DarkTheme.css`] to include some
+pre-defined colors using CSS, especially if you have experience with web-based CSS.
 * Solution
 ** You can modify the existing test methods for `EventCard` to include testing the tag's color as well.
 ** See this https://github.com/se-edu/addressbook-level4/pull/798[PR] for the full solution.
-*** The PR uses the hash code of the tag names to generate a color. This is deliberately designed to ensure consistent colors each time the application runs. You may wish to expand on this design to include additional features, such as allowing users to set their own tag colors, and directly saving the colors to storage, so that tags retain their colors even if the hash code algorithm changes.
+*** The PR uses the hash code of the tag names to generate a color. This is deliberately designed to ensure consistent
+colors each time the application runs. You may wish to expand on this design to include additional features, such as
+allowing users to set their own tag colors, and directly saving the colors to storage, so that tags retain their colors
+even if the hash code algorithm changes.
 ****
 
-. Modify link:{repoURL}/src/main/java/seedu/scheduler/commons/events/ui/NewResultAvailableEvent.java[`NewResultAvailableEvent`] such that link:{repoURL}/src/main/java/seedu/scheduler/ui/ResultDisplay.java[`ResultDisplay`] can show a different style on error (currently it shows the same regardless of errors).
+. Modify
+link:{repoURL}/src/main/java/seedu/scheduler/commons/events/ui/NewResultAvailableEvent.java[`NewResultAvailableEvent`]
+such that link:{repoURL}/src/main/java/seedu/scheduler/ui/ResultDisplay.java[`ResultDisplay`] can show a different style
+on error (currently it shows the same regardless of errors).
 +
 **Before**
 +
@@ -908,19 +1180,31 @@ image::getting-started-ui-result-after.png[width="200"]
 +
 ****
 * Hints
-** link:{repoURL}/src/main/java/seedu/scheduler/commons/events/ui/NewResultAvailableEvent.java[`NewResultAvailableEvent`] is raised by link:{repoURL}/src/main/java/seedu/scheduler/ui/CommandBox.java[`CommandBox`] which also knows whether the result is a success or failure, and is caught by link:{repoURL}/src/main/java/seedu/scheduler/ui/ResultDisplay.java[`ResultDisplay`] which is where we want to change the style to.
-** Refer to link:{repoURL}/src/main/java/seedu/scheduler/ui/CommandBox.java[`CommandBox`] for an example on how to display an error.
+** link:{repoURL}/src/main/java/seedu/scheduler/commons/events/ui/NewResultAvailableEvent.java[`NewResultAvailableEvent`]
+is raised by link:{repoURL}/src/main/java/seedu/scheduler/ui/CommandBox.java[`CommandBox`] which also knows whether the
+result is a success or failure, and is caught by
+link:{repoURL}/src/main/java/seedu/scheduler/ui/ResultDisplay.java[`ResultDisplay`] which is where we want to change the
+style to.
+** Refer to link:{repoURL}/src/main/java/seedu/scheduler/ui/CommandBox.java[`CommandBox`] for an example on how to
+display an error.
 * Solution
-** Modify link:{repoURL}/src/main/java/seedu/scheduler/commons/events/ui/NewResultAvailableEvent.java[`NewResultAvailableEvent`] 's constructor so that users of the event can indicate whether an error has occurred.
-** Modify link:{repoURL}/src/main/java/seedu/scheduler/ui/ResultDisplay.java[`ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)`] to react to this event appropriately.
+** Modify
+link:{repoURL}/src/main/java/seedu/scheduler/commons/events/ui/NewResultAvailableEvent.java[`NewResultAvailableEvent`]'s
+constructor so that users of the event can indicate whether an error has occurred.
+** Modify
+link:{repoURL}/src/main/java/seedu/scheduler/ui/ResultDisplay.java[`ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)`]
+to react to this event appropriately.
 ** You can write two different kinds of tests to ensure that the functionality works:
 *** The unit tests for `ResultDisplay` can be modified to include verification of the color.
-*** The system tests link:{repoURL}/src/test/java/systemtests/SchedulerSystemTest.java[`schedulerSystemTest#assertCommandBoxShowsDefaultStyle() and schedulerSystemTest#assertCommandBoxShowsErrorStyle()`] to include verification for `ResultDisplay` as well.
+*** The system tests
+link:{repoURL}/src/test/java/systemtests/SchedulerSystemTest.java[`schedulerSystemTest#assertCommandBoxShowsDefaultStyle()
+and schedulerSystemTest#assertCommandBoxShowsErrorStyle()`] to include verification for `ResultDisplay` as well.
 ** See this https://github.com/se-edu/addressbook-level4/pull/799[PR] for the full solution.
 *** Do read the commits one at a time if you feel overwhelmed.
 ****
 
-. Modify the link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter`] to show the total number of events in the scheduler.
+. Modify the link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter`] to show the total
+number of events in the scheduler.
 +
 **Before**
 +
@@ -932,30 +1216,47 @@ image::getting-started-ui-status-after.png[width="500"]
 +
 ****
 * Hints
-** link:{repoURL}/src/main/resources/view/StatusBarFooter.fxml[`StatusBarFooter.fxml`] will need a new `StatusBar`. Be sure to set the `GridPane.columnIndex` properly for each `StatusBar` to avoid misalignment!
-** link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter`] needs to initialize the status bar on application start, and to update it accordingly whenever the scheduler is updated.
+** link:{repoURL}/src/main/resources/view/StatusBarFooter.fxml[`StatusBarFooter.fxml`] will need a new `StatusBar`. Be
+sure to set the `GridPane.columnIndex` properly for each `StatusBar` to avoid misalignment!
+** link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter`] needs to initialize the
+status bar on application start, and to update it accordingly whenever the scheduler is updated.
 * Solution
-** Modify the constructor of link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter`] to take in the number of events when the application just started.
-** Use link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter#handleschedulerChangedEvent(schedulerChangedEvent)`] to update the number of events whenever there are new changes to the scheduler.
-** For tests, modify link:{repoURL}/src/test/java/guitests/guihandles/StatusBarFooterHandle.java[`StatusBarFooterHandle`] by adding a state-saving functionality for the total number of events status, just like what we did for save location and sync status.
-** For system tests, modify link:{repoURL}/src/test/java/systemtests/SchedulerSystemTest.java[`SchedulerSystemTest`] to also verify the new total number of events status bar.
+** Modify the constructor of link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter`] to
+take in the number of events when the application just started.
+** Use
+link:{repoURL}/src/main/java/seedu/scheduler/ui/StatusBarFooter.java[`StatusBarFooter#handleschedulerChangedEvent(schedulerChangedEvent)`]
+to update the number of events whenever there are new changes to the scheduler.
+** For tests, modify
+link:{repoURL}/src/test/java/guitests/guihandles/StatusBarFooterHandle.java[`StatusBarFooterHandle`] by adding a
+state-saving functionality for the total number of events status, just like what we did for save location and sync
+status.
+** For system tests, modify link:{repoURL}/src/test/java/systemtests/SchedulerSystemTest.java[`SchedulerSystemTest`] to
+also verify the new total number of events status bar.
 ** See this https://github.com/se-edu/addressbook-level4/pull/803[PR] for the full solution.
 ****
 
 [discrete]
 ==== `Storage` component
 
-*Scenario:* You are in charge of `storage`. For your next project milestone, your team plans to implement a new feature of saving the scheduler to the cloud. However, the current implementation of the application constantly saves the scheduler after the execution of each command, which is not ideal if the user is working on a limited internet connection. Your team decided that the application should instead save the changes to a temporary local backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the scheduler storage.
+*Scenario:* You are in charge of `storage`. For your next project milestone, your team plans to implement a new feature
+of saving the scheduler to the cloud. However, the current implementation of the application constantly saves the
+scheduler after the execution of each command, which is not ideal if the user is working on a limited internet
+connection. Your team decided that the application should instead save the changes to a temporary local backup file
+first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the
+scheduler storage.
 
 [TIP]
 Do take a look at <<Design-Storage>> before attempting to modify the `Storage` component.
 
-. Add a new method `backupScheduler(ReadOnlyScheduler)`, so that the scheduler can be saved in a fixed temporary location.
+. Add a new method `backupScheduler(ReadOnlyScheduler)`, so that the scheduler can be saved in a fixed temporary
+location.
 +
 ****
 * Hint
-** Add the API method in link:{repoURL}/src/main/java/seedu/scheduler/storage/SchedulerStorage.java[`SchedulerStorage`] interface.
-** Implement the logic in link:{repoURL}/src/main/java/seedu/scheduler/storage/StorageManager.java[`StorageManager`] and link:{repoURL}/src/main/java/seedu/scheduler/storage/XmlSchedulerStorage.java[`XmlSchedulerStorage`] class.
+** Add the API method in link:{repoURL}/src/main/java/seedu/scheduler/storage/SchedulerStorage.java[`SchedulerStorage`]
+interface.
+** Implement the logic in link:{repoURL}/src/main/java/seedu/scheduler/storage/StorageManager.java[`StorageManager`] and
+link:{repoURL}/src/main/java/seedu/scheduler/storage/XmlSchedulerStorage.java[`XmlSchedulerStorage`] class.
 * Solution
 ** See this https://github.com/se-edu/addressbook-level4/pull/594[PR] for the full solution.
 ****
@@ -963,9 +1264,15 @@ Do take a look at <<Design-Storage>> before attempting to modify the `Storage` c
 [[GetStartedProgramming-RemarkCommand]]
 === Creating a new command: `remark`
 
-By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major components of the app.
+By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major
+components of the app.
 
-*Scenario:* You are a software maintainer for `scheduler`, as the former developer team has moved on to new projects. The current users of your application have a list of new feature requests that they hope the software will eventually have. The most popular request is to allow adding additional comments/notes about a particular event, by providing a flexible `remark` field for each event, rather than relying on tags alone. After designing the specification for the `remark` command, you are convinced that this feature is worth implementing. Your job is to implement the `remark` command.
+*Scenario:* You are a software maintainer for `scheduler`, as the former developer team has moved on to new projects.
+The current users of your application have a list of new feature requests that they hope the software will eventually
+have. The most popular request is to allow adding additional comments/notes about a particular event, by providing a
+flexible `remark` field for each event, rather than relying on tags alone. After designing the specification for the
+`remark` command, you are convinced that this feature is worth implementing. Your job is to implement the `remark`
+command.
 
 ==== Description
 Edits the remark for an event specified in the `INDEX`. +
@@ -985,13 +1292,18 @@ Let's start by teaching the application how to parse a `remark` command. We will
 
 **Main:**
 
-. Add a `RemarkCommand` that extends link:{repoURL}/src/main/java/seedu/scheduler/logic/commands/Command.java[`Command`]. Upon execution, it should just throw an `Exception`.
-. Modify link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser`] to accept a `RemarkCommand`.
+. Add a `RemarkCommand` that extends
+link:{repoURL}/src/main/java/seedu/scheduler/logic/commands/Command.java[`Command`]. Upon execution, it should just
+throw an `Exception`.
+. Modify link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser`] to accept a
+`RemarkCommand`.
 
 **Tests:**
 
 . Add `RemarkCommandTest` that tests that `execute()` throws an Exception.
-. Add new test method to link:{repoURL}/src/test/java/seedu/scheduler/logic/parser/SchedulerParserTest.java[`SchedulerParserTest`], which tests that typing "remark" returns an instance of `RemarkCommand`.
+. Add new test method to
+link:{repoURL}/src/test/java/seedu/scheduler/logic/parser/SchedulerParserTest.java[`SchedulerParserTest`], which tests
+that typing "remark" returns an instance of `RemarkCommand`.
 
 ===== [Step 2] Logic: Teach the app to accept 'remark' arguments
 Let's teach the application to parse arguments that our `remark` command will accept. E.g. `1 r/Likes to drink coffee.`
@@ -1000,33 +1312,43 @@ Let's teach the application to parse arguments that our `remark` command will ac
 
 . Modify `RemarkCommand` to take in an `Index` and `String` and print those two parameters as the error message.
 . Add `RemarkCommandParser` that knows how to parse two arguments, one index and one with prefix 'r/'.
-. Modify link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser`] to use the newly implemented `RemarkCommandParser`.
+. Modify link:{repoURL}/src/main/java/seedu/scheduler/logic/parser/SchedulerParser.java[`SchedulerParser`] to use the
+newly implemented `RemarkCommandParser`.
 
 **Tests:**
 
 . Modify `RemarkCommandTest` to test the `RemarkCommand#equals()` method.
 . Add `RemarkCommandParserTest` that tests different boundary values
 for `RemarkCommandParser`.
-. Modify link:{repoURL}/src/test/java/seedu/scheduler/logic/parser/SchedulerParserTest.java[`SchedulerParserTest`] to test that the correct command is generated according to the user input.
+. Modify link:{repoURL}/src/test/java/seedu/scheduler/logic/parser/SchedulerParserTest.java[`SchedulerParserTest`] to
+test that the correct command is generated according to the user input.
 
 ===== [Step 3] Ui: Add a placeholder for remark in `EventCard`
-Let's add a placeholder on all our link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`] s to display a remark for each event later.
+Let's add a placeholder on all our link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`] s to
+display a remark for each event later.
 
 **Main:**
 
-. Add a `Label` with any random text inside link:{repoURL}/src/main/resources/view/EventListCard.fxml[`EventListCard.fxml`].
-. Add FXML annotation in link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`] to tie the variable to the actual label.
+. Add a `Label` with any random text inside
+link:{repoURL}/src/main/resources/view/EventListCard.fxml[`EventListCard.fxml`].
+. Add FXML annotation in link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`] to tie the variable
+to the actual label.
 
 **Tests:**
 
-. Modify link:{repoURL}/src/test/java/guitests/guihandles/EventCardHandle.java[`EventCardHandle`] so that future tests can read the contents of the remark label.
+. Modify link:{repoURL}/src/test/java/guitests/guihandles/EventCardHandle.java[`EventCardHandle`] so that future tests
+can read the contents of the remark label.
 
 ===== [Step 4] Model: Add `Remark` class
-We have to properly encapsulate the remark in our link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`] class. Instead of just using a `String`, let's follow the conventional class structure that the codebase already uses by adding a `Remark` class.
+We have to properly encapsulate the remark in our
+link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`] class. Instead of just using a `String`,
+let's follow the conventional class structure that the codebase already uses by adding a `Remark` class.
 
 **Main:**
 
-. Add `Remark` to model component (you can copy from link:{repoURL}/src/main/java/seedu/scheduler/model/event/Venue.java[`Venue`], remove the regex and change the names accordingly).
+. Add `Remark` to model component (you can copy from
+link:{repoURL}/src/main/java/seedu/scheduler/model/event/Venue.java[`Venue`], remove the regex and change the names
+accordingly).
 . Modify `RemarkCommand` to now take in a `Remark` instead of a `String`.
 
 **Tests:**
@@ -1034,16 +1356,23 @@ We have to properly encapsulate the remark in our link:{repoURL}/src/main/java/s
 . Add test for `Remark`, to test the `Remark#equals()` method.
 
 ===== [Step 5] Model: Modify `Event` to support a `Remark` field
-Now we have the `Remark` class, we need to actually use it inside link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`].
+Now we have the `Remark` class, we need to actually use it inside
+link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`].
 
 **Main:**
 
 . Add `getRemark()` in link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`].
-. You may assume that the user will not be able to use the `add` and `edit` commands to modify the remarks field (i.e. the event will be created without a remark).
-. Modify link:{repoURL}/src/main/java/seedu/scheduler/model/util/SampleSchedulerDataUtil.java/[`SampleSchedulerDataUtil`] to add remarks for the sample data (delete your `scheduler.xml` so that the application will load the sample data when you launch it.)
+. You may assume that the user will not be able to use the `add` and `edit` commands to modify the remarks field (i.e.
+the event will be created without a remark).
+. Modify
+link:{repoURL}/src/main/java/seedu/scheduler/model/util/SampleSchedulerDataUtil.java/[`SampleSchedulerDataUtil`] to add
+remarks for the sample data (delete your `scheduler.xml` so that the application will load the sample data when you
+launch it.)
 
 ===== [Step 6] Storage: Add `Remark` field to `XmlAdaptedEvent` class
-We now have `Remark` s for `Event` s, but they will be gone when we exit the application. Let's modify link:{repoURL}/src/main/java/seedu/scheduler/storage/XmlAdaptedEvent.java[`XmlAdaptedEvent`] to include a `Remark` field so that it will be saved.
+We now have `Remark` s for `Event` s, but they will be gone when we exit the application. Let's modify
+link:{repoURL}/src/main/java/seedu/scheduler/storage/XmlAdaptedEvent.java[`XmlAdaptedEvent`] to include a `Remark` field
+so that it will be saved.
 
 **Main:**
 
@@ -1051,33 +1380,45 @@ We now have `Remark` s for `Event` s, but they will be gone when we exit the app
 
 **Tests:**
 
-. Fix `invalidAndValidEventSheduler.xml`, `typicalEventsScheduler.xml`, `validScheduler.xml` etc., such that the XML tests will not fail due to a missing `<remark>` element.
+. Fix `invalidAndValidEventSheduler.xml`, `typicalEventsScheduler.xml`, `validScheduler.xml` etc., such that the XML
+tests will not fail due to a missing `<remark>` element.
 
 ===== [Step 6b] Test: Add withRemark() for `EventBuilder`
-Since `Event` can now have a `Remark`, we should add a helper method to link:{repoURL}/src/test/java/seedu/scheduler/testutil/EventBuilder.java[`EventBuilder`], so that users are able to create remarks when building a link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`].
+Since `Event` can now have a `Remark`, we should add a helper method to
+link:{repoURL}/src/test/java/seedu/scheduler/testutil/EventBuilder.java[`EventBuilder`], so that users are able to
+create remarks when building a link:{repoURL}/src/main/java/seedu/scheduler/model/event/Event.java[`Event`].
 
 **Tests:**
 
-. Add a new method `withRemark()` for link:{repoURL}/src/test/java/seedu/scheduler/testutil/EventBuilder.java[`EventBuilder`]. This method will create a new `Remark` for the event that it is currently building.
-. Try and use the method on any sample `Event` in link:{repoURL}/src/test/java/seedu/scheduler/testutil/TypicalEvents.java[`TypicalEvents`].
+. Add a new method `withRemark()` for
+link:{repoURL}/src/test/java/seedu/scheduler/testutil/EventBuilder.java[`EventBuilder`]. This method will create a new
+`Remark` for the event that it is currently building.
+. Try and use the method on any sample `Event` in
+link:{repoURL}/src/test/java/seedu/scheduler/testutil/TypicalEvents.java[`TypicalEvents`].
 
 ===== [Step 7] Ui: Connect `Remark` field to `EventCard`
-Our remark label in link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`] is still a placeholder. Let's bring it to life by binding it with the actual `remark` field.
+Our remark label in link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`] is still a placeholder.
+Let's bring it to life by binding it with the actual `remark` field.
 
 **Main:**
 
-. Modify link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`]'s constructor to bind the `Remark` field to the `Event`'s remark.
+. Modify link:{repoURL}/src/main/java/seedu/scheduler/ui/EventCard.java[`EventCard`]'s constructor to bind the `Remark`
+field to the `Event`'s remark.
 
 **Tests:**
 
-. Modify link:{repoURL}/src/test/java/seedu/scheduler/ui/testutil/GuiTestAssert.java[`GuiTestAssert#assertCardDisplaysEvent(...)`] so that it will compare the now-functioning remark label.
+. Modify
+link:{repoURL}/src/test/java/seedu/scheduler/ui/testutil/GuiTestAssert.java[`GuiTestAssert#assertCardDisplaysEvent(...)`]
+so that it will compare the now-functioning remark label.
 
 ===== [Step 8] Logic: Implement `RemarkCommand#execute()` logic
-We now have everything set up... but we still can't modify the remarks. Let's finish it up by adding in actual logic for our `remark` command.
+We now have everything set up... but we still can't modify the remarks. Let's finish it up by adding in actual logic for
+our `remark` command.
 
 **Main:**
 
-. Replace the logic in `RemarkCommand#execute()` (that currently just throws an `Exception`), with the actual logic to modify the remarks of an event.
+. Replace the logic in `RemarkCommand#execute()` (that currently just throws an `Exception`), with the actual logic to
+modify the remarks of an event.
 
 **Tests:**
 
@@ -1116,9 +1457,11 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |university student |see my academic timetable |know what modules I am taking and plan accordingly
 
-|`* * *` |organized university student |classify events into different categories |identify which event belongs to which category
+|`* * *` |organized university student |classify events into different categories |identify which event belongs to which
+category
 
-|`* * *` |busy university student |know what task I need to complete by a certain date |plan my schedule in an efficient manner
+|`* * *` |busy university student |know what task I need to complete by a certain date |plan my schedule in an efficient
+manner
 
 |`* * *` |university student |create a new event |keep track of all my events
 
@@ -1128,13 +1471,17 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* * *` |busy university student |type fewer words when I enter a command |save some time
 
-|`* *` |forgetful university student |receive email reminders for my events |be reminded of events even if I do not check the scheduler
+|`* *` |forgetful university student |receive email reminders for my events |be reminded of events even if I do not
+check the scheduler
 
-|`* *` |disorganized university student |notified if I create events that have a time conflict |know if my events have time clashes
+|`* *` |disorganized university student |notified if I create events that have a time conflict |know if my events have
+time clashes
 
-|`* *` |university student |view a filtered list of my events |prepare for my upcoming events according to the filter criteria
+|`* *` |university student |view a filtered list of my events |prepare for my upcoming events according to the filter
+criteria
 
-|`* *` |disorganized university student |mark events which I attended or did not attend |keep track of my attended and unattended events
+|`* *` |disorganized university student |mark events which I attended or did not attend |keep track of my attended and
+unattended events
 
 |`* *` |university student |see attended events |keep track of events I attended
 
@@ -1158,9 +1505,11 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`*` |busy university student |get the shortest path from current location to next |reduce my traveling time
 
-|`*` |university student who love to control things remotely |add events using email |schedule my events even when I am not using the application
+|`*` |university student who love to control things remotely |add events using email |schedule my events even when I am
+not using the application
 
-|`*` |university student who has a bad sense of direction |display the location of an event on a map |locate the venue of my event and not be lost
+|`*` |university student who has a bad sense of direction |display the location of an event on a map |locate the venue
+of my event and not be lost
 
 |`*` |sleep deprived university student |record my estimated sleeping hours |monitor the number of hours I sleep at night
 
@@ -1168,15 +1517,18 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`*` |university student who likes to exercise |sync my fitness trackers to the application |monitor the number of steps I take
 
-|`*` |lazy university student |interact with scheduler using syntax closer to natural language |feel more interactive when using the application
+|`*` |lazy university student |interact with scheduler using syntax closer to natural language |feel more interactive
+when using the application
 
 |`*` |university student |sync events with social media |share with my acquaintance about my events
 
 |`*` |university student who has poor eyesight |add events by voice |reduce reading and typing
 
-|`*` |university student who has poor eyesight |be able to hear events being read out |reduce my reliance on what is being displayed on the screen
+|`*` |university student who has poor eyesight |be able to hear events being read out |reduce my reliance on what is
+being displayed on the screen
 
-|`*` |university student who is used to the Google ecosystem |sync my scheduler with my own Google Calendar |be in sync with that calendar
+|`*` |university student who is used to the Google ecosystem |sync my scheduler with my own Google Calendar |be in sync
+with that calendar
 |=======================================================================
 
 [appendix]
@@ -1310,61 +1662,36 @@ These instructions only provide a starting point for testers to work on; testers
 .. Re-launch the app by double-clicking the jar file. +
    Expected: The most recent window size and location are retained.
 
-_{ more test cases ... }_
+=== Adding an event
 
-=== Deleting a event
+. Adds new event(s)
+
+.. Test case: `add n/Study With Yoko s/tomorrow at 3pm d/Study again and again rt/monthly t/ad-hoc` +
+   Expected: Adds an event with event name:'Study with Yoko', start date time:'tomorrow 3pm', description:'study again and again', repeat type:monthly, tag:ad-hoc +
+
+=== Editing an event
+
+. Edits existing events
+
+.. Prerequisites: List all events using the `list` command. Multiple events in the list.
+.. Test case: `edit 1 n/Dinner with Joy` +
+   Expected: Edits the 1st event's event name to Dinner with Joy.
+
+=== Deleting an event
 
 . Deleting an event while all events are listed
 
 .. Prerequisites: List all events using the `list` command. Multiple events in the list.
 .. Test case: `delete 1` +
-   Expected: The first event is deleted from the list. Details of the deleted event shown in the status message. Timestamp in the status bar is updated.
+   Expected: The first event is deleted from the list. Event name of the deleted event shown in the status message.
 .. Test case: `delete 0` +
-   Expected: No event is deleted. Error details are shown in the status message. Status bar remains the same.
-.. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) _{give more}_ +
+   Expected: No event is deleted. Error details are shown in the status message.
+.. Other incorrect delete commands to try: `delete`, `delete x` (where x is larger than the list size) +
    Expected: Similar to previous.
-
-_{ more test cases ... }_
 
 === Saving data
 
 . Dealing with missing/corrupted data files
 
-.. _{explain how to simulate a missing/corrupted file and the expected behavior}_
-
-_{ more test cases ... }_
-
 
 [appendix]
-== Release Plan
-
-*He Xinyi*
-
-- v1.1: Implementation of Pop-up function based on Event start time only +
-- v1.2: Created an input data field to enable customizable pop-up time +
-- v1.3: Full implementation of allowing the pop-up function to update accordingly whenever events are changed
-
-*Zhang Yezhong*
-
-- v1.1 Partial implementation on `GetGCEvents` command +
-- v1.2 Implementation of `GetGCEvents` command +
-- v1.3 Implementation of all relevant commands to sync with Google Calendar in real time +
-- v1.4 Upgraded implementation to synchronous version
-
-*Goh Cheng Yu*
-
-- v1.1: +
-- v1.2: +
-- v1.3: +
-
-*Wu Jiacheng*
-
-- v1.1: Partial implementation of tag book storage +
-- v1.2: Partial implementation of tag functions +
-- v1.3: Full implementation of tag functions +
-
-*Daniel Ng Sze Yao*
-
-- v1.1: +
-- v1.2: +
-- v1.3: +

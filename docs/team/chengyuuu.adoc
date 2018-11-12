@@ -9,34 +9,30 @@
 
 == Overview
 
-AddressBook - Level 4 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
+iScheduler Xs Max is a desktop scheduler application morphed from the original Address Book sample application (Level 4). As its name suggests, it is used for scheduling events. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 20 kLoC.
 
 == Summary of contributions
 
-* *Major enhancement*: added *the commands that allow users to manage their events in a scheduler*
-** What it does: The `add` command allows user to create events in the scheduler. Repeated events can be created by specifying how they want the events to be repeat. +
-The `edit` command is used to edit either single event or repeating events. The `delete` command enables user to either delete a single event or repeating events.
+* *Major enhancement*: added *commands that allow users to manage their events in a scheduler*
+** What it does: The `add` command allows user to create either single or repeated events in the scheduler.
+The `edit` and `delete` command is used to `edit` and `delete` single or repeated events.
 ** Justification: These features are important because it allow students to keep track of their past, present and future schedules which enables them to have better time management.
 ** Highlights:  This enhancement involves adding commands to aid in scheduling of events. Updates were made to various components such as `Logic`, `Model` and `Storage`.
-A singleton pattern class `RepeatEventGenerator` was also created to assist in generating repeated events according to command parsed.
+A singleton pattern class `RepeatEventGenerator` was also created to assist in generating repeated events.
 
 * *Code contributed*: https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&search=chengyuuu[Project Code Dashboard]
 
 * *Other contributions*:
 
 ** Project management:
-*** Managed pull requests.
+*** Managed team repository's pull requests.
 ** Enhancements to existing features:
 *** Morphed AddressBook - Level 4 to iScheduler Xs Max (including update of test cases and sample data) (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/47[#47], https://github.com/CS2103-AY1819S1-F11-1/main/pull/94[#94], https://github.com/CS2103-AY1819S1-F11-1/main/pull/150[#150])
-*** Real-time date time parsing is added to show parsed date time when command is being inputted. (Pull request https://github.com/CS2103-AY1819S1-F11-1/main/pull/222[#222])
 ** Documentation:
 *** Updated user stories and use cases in the Developer Guide (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/96[#96], https://github.com/CS2103-AY1819S1-F11-1/main/pull/232[#232])
-*** Updated User Guide and Developer Guide to reflect the `add`, `delete` and `edit` commands. (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/111[#111], https://github.com/CS2103-AY1819S1-F11-1/main/pull/154[#154])
+*** Updated documentation to reflect `add`, `delete` and `edit` commands. (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/111[#111], https://github.com/CS2103-AY1819S1-F11-1/main/pull/154[#154])
 ** Community:
-*** PR reviewed (with non-trivial review comments): https://github.com/CS2103-AY1819S1-F11-1/main/pull/101[#101]
 *** Reported bugs and suggestions for other teams in the class (examples:  https://github.com/CS2103-AY1819S1-W14-2/main/issues/115[#115], https://github.com/CS2103-AY1819S1-W14-2/main/issues/128[#128], https://github.com/CS2103-AY1819S1-W14-2/main/issues/134[#134])
-** Tools:
-*** Integrated a third party library (Natty) to the project (Pull request https://github.com/CS2103-AY1819S1-F11-1/main/pull/47[#47])
 
 == Contributions to the User Guide
 
@@ -45,6 +41,8 @@ A singleton pattern class `RepeatEventGenerator` was also created to assist in g
 |===
 
 include::../UserGuide.adoc[tag=add]
+
+_More supported date, time and reminder times can be seen in https://github.com/CS2103-AY1819S1-F11-1/main/blob/master/docs/UserGuide.adoc[UserGuide]_
 
 include::../UserGuide.adoc[tag=edit]
 
@@ -57,5 +55,9 @@ include::../UserGuide.adoc[tag=delete]
 |===
 
 include::../DeveloperGuide.adoc[tag=add]
+
+include::../DeveloperGuide.adoc[tag=edit]
+
+include::../DeveloperGuide.adoc[tag=delete]
 
 

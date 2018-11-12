@@ -2,6 +2,8 @@
 :site-section: ContactUs
 :stylesDir: stylesheets
 
-* *Bug reports, Suggestions* : Post in our https://github.com/CS2103-AY1819S1-F11-1/main/issues[issue tracker] if you noticed bugs or have suggestions on how to improve.
+* *Bug reports, Suggestions* : Post in our https://github.com/CS2103-AY1819S1-F11-1/main/issues[issue tracker] if you
+noticed bugs or have suggestions on how to improve.
 * *Contributing* : We welcome pull requests. Follow the process described https://github.com/oss-generic/process[here]
-* *Email us* : You can also reach our Project Advisor at `damith [at] comp.nus.edu.sg`. He is also the Project Advisor of https://se-edu.github.io/Team.html[AddressBook Level 1-4].
+* *Email us* : You can also reach our Project Advisor at `damith [at] comp.nus.edu.sg`. He is also the Project Advisor
+of https://se-edu.github.io/Team.html[AddressBook Level 1-4].
