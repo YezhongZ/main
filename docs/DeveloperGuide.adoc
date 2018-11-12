@@ -103,6 +103,29 @@ When you are ready to start coding,
 1. Get some sense of the overall design by reading <<Design-Architecture>>.
 2. Take a look at <<GetStartedProgramming>>.
 
+==== Setup for Google checks
+
+1. Go to ConnectToGoogleeCalendarTest.Java
+
+2. Find the test case getCalendar()
+
+3. Locate the line
+
+`assertEquals("cs21031819f111tester@gmail.com", getFromGoogleCalendar.getId());`
+
+Change the email address to your google email address
+
+Change the line assertEquals("[Your Google Email Address]", getFromGoogleCalendar.getId());
+
+==== Setup for welcome page
+
+Go to BrowserPanel.java
+
+Locate the line with a delay time
+This number shall be a large number (such as `999999000`)
+When deployed to user, please change to an expected time for user to see the welcome page (such as `45000` for 45 seconds)
+
+
 == Design
 
 [[Design-Architecture]]
@@ -324,19 +347,26 @@ image::UndoRedoActivityDiagram.png[width="650"]
 ** Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as `HistoryManager` now needs to do two different things.
 // end::undoredo[]
 
-// tag::getGoogleCalendarEvents/postGoogleCalendarEvents[]
-=== Get/Post Google Calendar Events
+// tag::EnterGoogleCalendarMode[]
+=== EnterGoogleCalendarMode
 
 ==== Current Implementation
-The get/post Google Calendar events mechanism is facilitated by [proposed] utility method to get Google authentication. It implements the following operations:
+The EnterGoogleCalendarMode mechanism is facilitated by utility method to get Google authentication and enables the Google Calendar feature. It implements the following operations:
 
-* `getGoogleCalendarEvents` -- Get (pull) the online Google Calendar events and merge with local events.
-* `postGoogleCalendarEvents` -- Post (push) the local events and merge with online Google Calendar.
+* `EnterGoogleCalendarMode` -- Enable the Google Calendar feasture and , get (pull) the online Google Calendar events and merge with local events.
+* `postGoogleCalendarEvents`[coming in v2.0] -- Post (push) the local events and merge with online Google Calendar.
 
-Below is an example usage scenario and explanation on the `Get/PostGoogleCalendarEvents` mechanism behavior behind each step.
+It also supports the following existing features, to enhance the with real-time effects on Google Calendar (those created with the app)
+* `Add` -- When the Google Calendar feature is enabled, the app creates the same event(s) in the google calendar.
+* `Edit` -- When the Google Calendar feature is enabled, the app edits the same event(s) in the google calendar.
+* `Delete` -- When the Google Calendar feature is enabled, the app deletes the same event(s) in the google calendar.
+* `Clear` -- When the Google Calendar feature is enabled, the app clears the primary google calendar.
+*The Event(s) mentioned above refer to those created by the app. The existing ones are not supproted yet. Even they are pulled to local database, commonds have no effect on them, as mentioned in the UserGuide*
+
+Below is an example usage scenario and explanation on the `EnterGoogleCalendarMode` mechanism behavior behind each step.
 
 **Step 1** +
--> The user has always been using the application locally. +
+-> The user has always been using the application locally and never enabled this feasure. +
 -> All Scheduler Events have been created locally. That is, the Scheduler has only local events (no Google Calendar Events).
 
 -> An empty database is illustrated below as an imaginary array:
@@ -344,11 +374,10 @@ Below is an example usage scenario and explanation on the `Get/PostGoogleCalenda
 image::EmptyLocalDataBaseDiagram.png[width="150"]
 
 **Step 2** +
--> The user executes `GetGCEvents` command to download the Google Calendar Events to the local database. +
+-> The user executes `EnterGoogleCalendarMode` command to enable the feature. download the Google Calendar Events to the local database. +
 
--> A `Calendar` object is to be built with method `getCalendar()`. +
--> A method `getNetHttpTransport()` is called to let application establish a connection with Google to initiate an authorization process
-(for those who use this command for the  first time).
+-> A `Calendar` object is to be built with method `getCalendar()` in `ConnectToGoogleCalendar.java` +
+-> A method `getNetHttpTransport()` is called to let application establish a connection with Google to initiate an authorization process (for those who use this command for the  first time).
 
 -> A pop-up window will appear. The User will be required to log in their Google Account as per other Google Service. +
 After successful login, the login credential will be saved locally such that no future log-in is required. +
@@ -362,19 +391,19 @@ image::flowChatForDecisionOnLogIn.png[width="350"]
 
 [NOTE]
 ====
-For developers, if you test the application locally, please do not push (include) this log-in credential file to the `out/production` package. +
+For developers, if you test the application locally, please do not include this log-in credential file to the `out/production` package. +
 Errors could occur when the user downloads and uses it.
 ====
 
 **Step 4** +
--> The application will then call method `getEvents` to extract a (Google)`Events` object from the user’s online Google Calendar.
+-> The application will then call method `getEvents` to extract a (Google)`Events` objects from the user’s online Google Calendar.
 [NOTE]
 ====
-For current implementation, only events in the primary (default) are extracted.
+For current implementation, only events in the primary (default) calendar are extracted.
 ====
 
 **Step 5** +
--> For each event extracted, a [proposed] eventConvertor utility method called `addGcEventToLocal` is called to convert the Google Extracted Event to local Event.
+-> For each event extracted, various ConvertEvent utility methods will be called `addGcEventToLocal` is called to convert the Google Extracted Event to local Event.
 
 **Step 6** +
 -> In the `execute` method, the converted events are saved in the local database, together with other locally created Events.
@@ -388,7 +417,7 @@ For current implementation, only events in the primary (default) are extracted.
 ** Pro: Very secured.
 ** Con: Not user-friendly.
 
-{more to be updated}
+// end::EnterGoogleCalendarMode[]
 
 // tag::dataencryption[]
 === [Proposed] Data Encryption

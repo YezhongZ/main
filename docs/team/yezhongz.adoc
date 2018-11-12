@@ -9,40 +9,49 @@
 
 == Overview
 
-iScheduler Xs Max is a desktop event scheduling application used for personal use. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
+iScheduler Xs Max is a desktop scheduler application morphed from the original
+https://github.com/nus-cs2103-AY1819S1/addressbook-level4[Address Book sample application (Level 4)]. As its name suggests, it is used for scheduling events. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
 
 == Summary of contributions
 
-* *Major enhancement*: added *the ability to sync with Google Calendar commands*
-** What it does: allows the user to create/edit/delete the events on local database as well as Google Calendar in real time.
-** Justification: This feature improves the product significantly because a user might want to push local events to Goole Calendar/ get events from Google instead of using a blank local databse.
-** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
-** Credits: _{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}_
+* *Major enhancement*: enpowers the app with *the ability to sync with Google Calendar*
+** What it does: In Google Calendar mode, when the user  `add` / `edit` /`delete`/`clear` the local Events, same effect will be applied to the Google Calendar in real time.
+** Justification: This feature improves the product significantly because a user might want to obtain local events events from Google instead of using a blank local databse, and to interact with Google Calendar thereafter. This enhancement efffectively turns the app to be a Command Line Controlled version of Google Calendar.
+** Highlights: This enhancement affects almost all existing commands. It required an in-depth analysis of design alternatives and the links among the commands. The implementation was extremeley challenging as it required full understanding of both local implementation as well as Google implementation. For each and every command, many format convertions are required.
+** Credits: Google APIs are heavily used in this project because intensive interaction with Google Calendar is required.
 
-* *Minor enhancement 1*: added a offline mode switch to allow user use it offline without any error.
-* *Minor enhancement 2*: added a welcome page and automatically becomes the log-in page after few seconds.
-The section below o be Updated...
-* *Code contributed*: [https://github.com[Functional code]] [https://github.com[Test code]] _{give links to collated code files}_
+* *Minor enhancement 1*: added a check to allow user use the app in offline without any error, before the initialization of Google Calendar. The app only enters Google Calendar Mode (with sync with Goolge Calendar feastures all enabled) after the user explicites type the command.
+* *Minor enhancement 2*: added a welcome page and automatically becomes the log-in page after 45 seconds. This added feature allows more interaction with the user.
+
+* *Code contributed*: https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&search=YezhongZ[Project Code Dashboard]
+*
 
 * *Other contributions*:
 
 ** Project management:
-*** Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
+*** Managed releases `v1.1` , `v1.2` , `v1.2.5` , `v1.3` , `v1.3.1`  (5 releases) on GitHub
+*** Managed milestones
+*** Created and maintained the issue trackers
+*** Managed Pull Requests (PRs): Reviewed about https://github.com/CS2103-AY1819S1-F11-1/main/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3AYezhongZ[50 PRs] , approved more than https://github.com/CS2103-AY1819S1-F11-1/main/issues?q=is%3Apr+review%3Aapproved+is%3Aclosed[100 PRs]
 ** Enhancements to existing features:
-*** Updated the GUI color scheme (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
+*** Updated the icon (Pull request https://github.com/CS2103-AY1819S1-F11-1/main/pull/283[#283])
+*** Updated the UI screenshot (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/61[#61] ,https://github.com/CS2103-AY1819S1-F11-1/main/pull/113[#113], https://github.com/CS2103-AY1819S1-F11-1/main/pull/284[#284])
+*** Wrote tests cases to increase coverage from 67.8% to 88.3% (https://coveralls.io/builds/20040353[Coveral Build 525])
+*** Updated the publish Page (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/72[#72] https://github.com/CS2103-AY1819S1-F11-1/main/pull/73[#73])
+*** Wrote the overview in README (Pull request https://github.com/CS2103-AY1819S1-F11-1/main/pull/49[#49])
+*** Designed the tagline, logo and banner (Pull request https://github.com/CS2103-AY1819S1-F11-1/main/pull/49[#49])
+*** Morphed AddressBook - Level 4 to iScheduler Xs Max (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/63[#63] , https://github.com/CS2103-AY1819S1-F11-1/main/pull/109[#109], https://github.com/CS2103-AY1819S1-F11-1/main/pull/170[#170])
+***
 ** Documentation:
-*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
+*** Updated User Guide and Developer Guide: (Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/44[#44] , https://github.com/CS2103-AY1819S1-F11-1/main/pull/64[#64], https://github.com/CS2103-AY1819S1-F11-1/main/pull/170[#170])
 ** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42]
-*** Contributed to forum discussions (examples:  https://github.com[1], https://github.com[2], https://github.com[3], https://github.com[4])
-*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com[1], https://github.com[2], https://github.com[3])
-*** Some parts of the history feature I added was adopted by several other class mates (https://github.com[1], https://github.com[2])
+*** PRs reviewed (with non-trivial review comments): Pull requests https://github.com/CS2103-AY1819S1-F11-1/main/pull/50[#50] , https://github.com/CS2103-AY1819S1-F11-1/main/pull/75[#75], https://github.com/CS2103-AY1819S1-F11-1/main/pull/96[#96], https://github.com/CS2103-AY1819S1-F11-1/main/pull/110[#110], https://github.com/CS2103-AY1819S1-F11-1/main/pull/154[#154]
+*** Contributed to SE AddressBook2 Developer Guide (Pull request https://github.com/se-edu/addressbook-level2/pull/413[#413])
+*** Contributed to forum discussions (examples:  https://github.com/nus-cs2103-AY1819S1/forum/issues/9[Git: Difference betwwen pull request and branch merge], https://github.com/nus-cs2103-AY1819S1/forum/issues/20[Git:2FA], https://github.com/nus-cs2103-AY1819S1/forum/issues/71[README Tab], https://github.com/nus-cs2103-AY1819S1/forum/issues/161[Project Setup]])
+*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com/CS2103-AY1819S1-T09-4/main/issues/115[1], https://github.com/CS2103-AY1819S1-T09-4/main/issues/116[2], https://github.com/CS2103-AY1819S1-T09-4/main/issues/111[3], https://github.com/CS2103-AY1819S1-T09-4/main/issues/108[4], https://github.com/CS2103-AY1819S1-T09-4/main/issues/106[5], https://github.com/CS2103-AY1819S1-T09-4/main/issues/105[6], https://github.com/CS2103-AY1819S1-T09-4/main/issues/104[7])
 ** Tools:
-*** Integrated a third party library (Natty) to the project (https://github.com[#42])
-*** Integrated a new Github plugin (CircleCI) to the team repo
-
-_{you can add/remove categories in the list above}_
+*** Integrated a third party library (google oauth client jetty) to the project (https://github.com/CS2103-AY1819S1-F11-1/main/pull/101[#101])
+*** *** Integrated a third party library (google api client) to the project (https://github.com/CS2103-AY1819S1-F11-1/main/pull/101[#101])
 
 == Contributions to the User Guide
 
@@ -51,7 +60,9 @@ _{you can add/remove categories in the list above}_
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=undoredo]
+include::../UserGuide.adoc[tag=filter-EnterGoogleCalendarMode]
+Please visit our https://cs2103-ay1819s1-F11-1.github.io/main/UserGuide.html#EnterGoogleCalendarMode[user guide]
+
 
 include::../UserGuide.adoc[tag=dataencryption]
 

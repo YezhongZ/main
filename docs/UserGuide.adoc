@@ -32,6 +32,8 @@ faster than traditional GUI apps. Interested? Jump to the <<Quick Start>> to get
 +
 image::Ui.png[width="790"]
 +
+
+
 .  Type the command in the command box and press kbd:[Enter] to execute it. +
 e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
@@ -526,37 +528,73 @@ The `redo` command fails as there are no `undo` commands executed previously.
 
 === Clearing all entries : `clear`
 
-[NOTE]
-====
-The current version does not sync this command with Google Calendar.
-====
-
 Clears all entries from the scheduler. +
 Format: `clear` +
 Aliases: `clea` OR `cle` OR `cl` OR `c` +
-_Coming in V1.4: Command format can be typed case-insensitive_
 
 === Exiting the program : `exit`
 
 Exits the program. +
 Format: `exit` +
 Aliases: `exi` OR `ex` OR `e` +
-_Coming in V1.4: Command format can be typed case-insensitive_
 
 === Saving the data
 
 Scheduler data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
-=== Get Events From Google Calendar : `getGCEvents`
-Pull events from your Google Calendar (login required) and merge them into a localised calendar. +
-Format: `getGCEvents`
+// tag::EnterGoogleCalendarMode[]
+=== EnterGoogleCalendarMode : `EnterGoogleCalendarMode`
+Initialize the app. The followings are done: Pull events from your Google Calendar (login required) and add them to local calendar. +
+Format: `EnterGoogleCalendarMode`
+Note that you shall NOT type any extra input after the command word `EnterGoogleCalendarMode`. behavior is not guaranteed.
 
 [NOTE]
 ====
-For now, those events downloaded from Google are not compatible with local commands:edit, delete.
-They will be suppported in v1.4.
+For now, those events downloaded from Google will be regarded as *purely local* Events. Commands on them will only have local effects, no real-time effects on the original events on Google Calendar.
+They will be suppported in v2.0.
 ====
+
+As a normal user (new user who does not understand the implementation of the app), you should not modify the data files or tokens manually, such edits would lead to various errors and exceptions. +
+
+By default, that is, before initializarion (before a normal user enters the `EnterGoogleCalendarMode`), the app is in Offline Mode. That means all command effects are local. The app does not attempt to connect to the internet. +
+
+When the user types the command `EnterGoogleCalendarMode`, then a pop up windows will appear in your default browser for you to log in your google account.
+
+*Log-ins*
+Take note that you will be requried to log in twice.
+- log-in for estabishing the link between the app and your google calendar. This is log-in from the webpage pop-up in your default browser. *This log-in credential is stored locally in your computer* Normally, you shall not swtch to another account. If you do want to switch, please close the app and delete the `StoredCredential` file. A more user-friendly command will be supported in v2.0.
+
+- log-in for viewing the Google Calendar on the right panel. This is log-in from the webpage on the right panel. *Note that the cookies are not stored. You will be required to log in again if you close the app*
+
+[NOTE]
+====
+Note for Log-In Process
+====
+****
+After the pop-up windonw appear, you shall enter your account number and password. +
+You shall not close the log in page. +
+If you have done so, the app is very like to become inactive and unable to accept any command. +
+
+Solution: +
+- You should try to enter the command again.
+
+If the problem persists, try the following: +
+
+- close the app and delete the `StoredCredential` file in your `token` folder found in the root folder.
+- make sure the content of `mode.txt` file is `Disabled`. Note that this file shall NOT be deleted at any time. If it is missing, the app is likely to have unexpected bebavior.
+****
+
+[NOTE]
+====
+Note for two-factor authentication (2FA) of your Google Account
+====
+****
+The app might able / not able to support your 2FA log in method, depends on the security level set by you.
+If the internet is not good, the log in page might not appear.
+****
+
+Below is the guide for the log-in process.
 
 [NOTE]
 ====
@@ -564,7 +602,7 @@ This command will have to access your Google Calendar data, Google authenticatio
 ====
 
 ****
-Step 1: If you have not logged into our application before, a prompt up login window will appear.
+Step 1: If you have not sucesfuuly logged into our application using `EnterGoogleCalendarMode` before, a pop-up login window will appear in your default browser.
 
 Step 2:
 
@@ -580,14 +618,96 @@ Step 3:
 
 Step 4:
 
-- The application then proceeds with the extraction of Google Calendar events, and trying to add them to local database.
-- A success message appears after the completion of addition of events.
+- The application then proceeds with the pulling of Google Calendar events, and trying to add them to local database.
+- A success message appears after the completion of addition of supported events.
+
+Note that if Google service is not stable, the limit of the IP address/account is reached or there are too many events. The command might not able to retrieve any event.
+Also, when Google receives too frequent command, the account/IP address might be locked but no error is shown to user. +
+
+Only single events and repeated events with single repeat date with a 'Repeat Until' date are supported.
 ****
 
-=== Post Events to Google Calendar : `postGCEvents` `[coming in v1.4]`
+[NOTE]
+====
+Note for concurrent usage of same account
+====
+****
+Note that your Google Account used for this app should only be one single user. We do not support multiple people using the same account.
 
-Post events from your local scheduler and merge your local events with Google Calendar events (login is required). +
+If more than one person is using the account, there might be more events showed in the calendar panel on the right compared to the left panel. The real time effec is only for local commands, commands entered from anywhere else (except from the app you are using right now) are not captured in the app and hence no effects.
+****
+
+[NOTE]
+====
+Note for using multiple account in the app
+====
+****
+This is not supported. Switching of account is also not supported. +
+
+For advcaned user, if you do want to switch, please close the app and delete the `StoredCredential` file. +
+However the behaviour is not guranteed.
+
+A more user-friendly command will be supported in v2.0.
+****
+
+*Note for different implementation of our app and Google*
+Note that this version is still v1.4 while we are not able to fully understand the implementation of Google Calendar on their side. +
+
+We can *only guarantee the command sent from the app is the same as intended*. However, we are not able to gurantee how Google interprete the command, and how they implement the bebavior of the command. It is expeccted to see differnet behaviors. That being said, we have tried as much as possible to ensure similar behavior.
+
+Below is an example of different implementation.
+- For an event across differnet days. Locally is shown as one item. Google's way of showing it might seem like multiple items because the start time and end time is not shown.
+
+Local Display:
+
+image::localDisplay.png[width="300"]
+
+Google Display:
+
+image::googleDisplay.png[width="300"]
+
+- For repeatUntil date, Google implements it differently and we are not able to fully understand it.
+
+
+*Note for Select Command*
+`Select` command is partially depreciated in this version. Selecting an event will not have any useful result, but only refresh the right panel.
+
+*Note for Event Description*
+This feature is partially depreciated in this version. Description is not shown in the app.
+
+*Note for Single non repeat Event*
+Such type of event shall not have a `RepeatUntil`,`RepeatType` field/attribute, and you shall not edit those fields as well. Behavior is not guaranteed.
+
+*Note for Tag*
+Not supported for syc with Google in this verion.
+
+*Note for Auto-refreshing of webpage on the right panel*
+This web panel's behavior is not guaranteed because it is much depend on your local set up. It may or may not auto-refresh. Please right click and refresh it. Alternatively, you can move keyboard to move to another Event, the webpage will be refreshed.
+When you do not see expected outcome, please ensure your webpage is re-freshed.
+
+*Note for Commands on Events already passed (before current time)*
+Due to Google's optimization, effect of commands on such events is not guaranteed.
+
+
+When you are offline, no effects on Google Calendar and command effects are only local.
+Depends on your internet quality, the command might not work as intended. Special locations such as school, dormitory and hotel, the firewall might affect our app. We are able to capture some error and report as `Warning: Internet Error/Status File Does Not Exist.` or `Only local changes` or `no effects on your Google Calender`. However, due to the complex Internet enviroment, we might not able to capture all internet connection problem.+
+
+If your internet quality is bad, the app could report above error as well. Please try your command again when the quality improves.
+
+// end::EnterGoogleCalendarMode[]
+
+
+// tag::postGCEvents[]
+=== Post Events to Google Calendar : `postGCEvents` `[coming in v2.0]`
+
+Posts the events from your local database and merge your local events with Google Calendar events (login is required). +
+
+This command is used to syc with Google Calendar, after your are offline and back online. +
+Note that when you are offline, commands will only have effects locally, no effect on Google Calendar online.
+
 Format: `postGCEvents`
+
+// end::postGCEvents[]
 
 === Auto-Completion of Commands
 As you may have already noticed, our GUI supports auto-completion which suggests possible commands when you type certain (or _certain combinations_ of) alphabetical characters.
@@ -656,9 +776,6 @@ e.g. `deleteReminder 2 re/30m re/1h`
 e.g. `postponeReminder 3 re/30m -u`
 
 * *Help* : `help`
-
-* *Select* : `select INDEX` +
-e.g.`select 2`
 
 * *History* : `history`
 
