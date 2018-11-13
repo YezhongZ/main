@@ -120,8 +120,8 @@ public class ConnectToGoogleCalendar {
                 contents.append(text).append(lineSeparator);
             }
         } catch (IOException e) {
-            logger.info(MESSAGE_IO_ERROR);
-            throw new CommandException(MESSAGE_IO_ERROR);
+            logger.info(MESSAGE_READ_WRITE_ERROR);
+            throw new CommandException(MESSAGE_READ_WRITE_ERROR);
         }
         return (contents.toString().trim().equals(expectedStatus));
     }
